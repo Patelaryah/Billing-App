@@ -1,0 +1,101 @@
+<ion-content style="height: 100vh;">
+  <!-- Header -->
+  <ion-content class="ion-head">
+    <div id="header" style="box-sizing: border-box;">
+      <div id="rectangle" style=" background-color: #E8DDFF; top:10%;">      
+      </div>
+      <div id="rectangle" style="left: 10%; top: 18%; background-color: #5516D9;"></div>
+    </div>
+  </ion-content>
+
+  <!-- mid -->
+  <ion-content class="ion-mid">
+    <div id="mid-main-div">
+      <div style="width: 90%;">
+         <P id="p-head">Login</P>
+         <P id="p-small">Please Sign in to Continue</P>
+      </div>
+
+      <div class="form-div">
+        <form class="form-div" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          
+          <!-- form -->
+          <div style="width: 95%; padding-right: 15px;">
+            <ion-item>
+              <ion-input formControlName="email" placeholder="Email" label="Email" labelPlacement="stacked" type="email">
+                <ion-icon slot="start" name="mail-outline" aria-hidden="true"></ion-icon>
+              </ion-input>
+            </ion-item>
+              
+            <ion-item>
+              <ion-input 
+              placeholder="Password"
+                formControlName="password" 
+                (ionFocus)="onPasswordChange()" 
+                labelPlacement="stacked" 
+                [type]="passwordVisible ? 'text' : 'password'" 
+                label="Password"
+              >
+                <ion-icon 
+                  slot="start" 
+                  name="lock-closed-outline" 
+                  aria-hidden="true"
+                ></ion-icon>
+                <ion-button 
+                  *ngIf="pass" 
+                  (click)="togglePasswordVisibility()" 
+                  fill="clear" 
+                  slot="end" 
+                  aria-label="Show/hide"
+                >
+                  <ion-icon 
+                    slot="icon-only" 
+                    [name]="passwordVisible ? 'eye-off-outline' : 'eye-outline'" 
+                    aria-hidden="true"
+                  ></ion-icon>
+                </ion-button>
+              </ion-input>
+            </ion-item> 
+          </div>
+
+          <!-- forget -->
+          <div style=" width: 85%; align-items: end; justify-items: end;">
+            <p (click)="goToForget()" id="p-forget">FORGET?</p>
+          </div>
+          
+          <!-- btn -->
+          <div style="width: 90%; margin-top: 20px;">
+            <ion-button strong="600" type="submit" shape="round" id="login-btn">
+              Login
+            </ion-button>
+          </div>
+        </form>
+      </div>
+
+      <!-- '-or-' -->
+      <div class="or-separator">
+        <div class="line"></div>
+        <div class="text">OR</div>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <!-- img -->
+    <div id="imgs">
+      <img src="../../../assets/icon/google.png" id="img1" alt="Google Login">
+      <img src="../../../assets/icon/facebook.png" id="img2" alt="Facebook Login">
+    </div>
+
+  </ion-content>
+
+  <!-- footer -->
+  <ion-content class="footer">
+    <div style="display: flex; justify-content: center;">
+      <!-- go to registration -->
+        <p style="color: black;">Don’t have an account? 
+          <a (click)="goToRegistration()" style="color: #5516D9; font-weight: bold;">Sign up</a>
+        </p>
+        
+    </div>
+
+</ion-content>

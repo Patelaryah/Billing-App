@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+ion-content {
+    --background: white !important;
+}
+
+div, p {
+    margin: 0;
+    padding: 0;
+}
+
+.ion-head {
+    height: 25%; 
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+#header {
+    display: flex;
+    position: relative;  
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-left: 55%;
+  }
+  
+  #rectangle {
+    position:absolute;
+    width: 100%;
+    height: 30%;
+    border-radius: 15px;
+    rotate: calc(-32deg);
+  }
+  
+.ion-mid {
+    display: flex;
+    height: 66vh;
+}
+
+#mid-main-div {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+#p-head {
+    font-size: 38px; 
+    color: #000000; 
+    font-weight: 700; 
+    font-family: 'Poppins', sans-serif;
+}
+
+#p-small {
+    font-size: 16px; 
+    color: #A8A8A8; 
+    font-weight: 500; 
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-input, ion-item {
+    --background: #ffffff;
+    --color: #000000;
+}
+ion-icon {
+    font-size: 1.2rem;
+    color: black;
+}
+ion-item {
+    margin: 0; 
+    padding: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#p-forget {
+    color: #5516D9;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 1.5%;
+}
+
+#login-btn {
+    --background: #5516D9;
+    width: 100%;
+    --color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.or-separator {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0; /* Space above and below */
+    // border: #000000 solid;
+  }
+
+  .line {
+    flex: 1; /* Makes the lines responsive */
+    height: 1px; /* Line thickness */
+    background-color: #B9B9B9; /* Line color */
+    margin: 0 10px; /* Space around the text */
+    height: 2px;
+    width: 100%;
+  }
+
+  .text {
+    font-size: 14px; /* Adjust text size */
+    color: #000; /* Text color */
+    font-weight: bold; /* Optional: Make the text bold */
+  }
+
+  #imgs {
+    display: flex; 
+    flex-direction: row; 
+    height: 60px; 
+    width: 100%; 
+    gap: 10%; 
+    justify-content: center;
+  }
+
+  #img1 {
+    margin-top: 6px;
+    height: 40px;
+    width: 40px;
+  }
+
+  #img2 {
+    height: 50px;
+    width: 50px;
+  }
+  
+  .footer {
+    height: 9vh;
+  }
+  

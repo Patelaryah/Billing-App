@@ -1,0 +1,68 @@
+<ion-content [fullscreen]="true">
+  <!-- Header -->
+  <ion-content class="heading">
+    <ion-grid *ngIf="isvisible">
+      <ion-row>
+        <ion-col style="text-align: end;">
+          <ion-button fill="clear" *ngIf="currentIndex < images.length - 1" (click)="isvisible = false; clickbtn = false;" href="/src/app/startpages/" id="header-btn">
+            Skip
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
+  <!-- Image Container(Mid) -->
+  <ion-content class="container">
+    <div class="image-container">
+      <swiper-container (swiperslidechange)="onSlideChange()" *ngIf="isvisible" [pagination]="true">
+        <swiper-slide>
+          <img [src]="images[0]" class="image" alt="Slide Image 1" />
+          <div style="width: 80%; display: flex; flex-direction: column;">
+            <p id="pheading">Manage Work more Easy</p>
+            <p id="psmall">We Have a Vary Easy Fast  Application Process</p>
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <img [src]="images[1]" class="image" alt="Slide Image 2"/>
+          <div style="width: 80%; display: flex; flex-direction: column;">
+            <p id="pheading">Fast and Easy Application</p>
+            <p id="psmall">Get ready for seamless bill payments and effrotiess money transfer</p>
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <img [src]="images[1]" class="image" alt="Slide Image 3" />
+          <div style="width: 80%; display: flex; flex-direction: column;">
+            <p id="pheading">Fast and Easy Application</p>
+            <p id="psmall">Get ready for seamless bill payments and effrotiess money transfer</p>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+      <div *ngIf="!isvisible">
+        <div id="finalscreen">
+          <img [src]="images[2]" style="margin-top: 30px;" class="image" alt="Slide Image 4" />
+          <div style="width: 80%; display: flex; flex-direction: column;">
+            <p id="pheading">Welcome</p>
+            <p id="psmall"> Fast and Easy Application</p>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </ion-content>
+
+  <!-- Footer -->
+  <ion-content class="footer">
+    <div *ngIf="isvisible" class="circle" slot="fixed"></div>
+
+    <ion-button *ngIf="!isvisible" slot="fixed" id="login-btn" (click)="goToLogin()">
+      Login
+    </ion-button>
+
+    <ion-button fill="outline" slot="fixed" id="footer-btn" (click)="isvisible = false; clickbtn = false;"
+      *ngIf="clickbtn">
+      <ion-label>Get Started</ion-label>
+      <ion-icon name="chevron-forward"></ion-icon>
+    </ion-button>
+  </ion-content>
+</ion-content>

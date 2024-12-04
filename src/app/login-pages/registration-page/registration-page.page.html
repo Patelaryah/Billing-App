@@ -1,0 +1,128 @@
+
+  <!-- Header -->
+  <ion-header class="ion-head" style="height: 20%; color: #5516D9; ">
+      <div id="header" style="box-sizing: border-box;">
+        <div id="rectangle" style=" left: 30%; top: 30%; background-color: #E8DDFF;">      
+        </div>
+        <div id="rectangle" style="top: 35%; left: 52%; background-color: #5516D9;"></div>
+      </div>
+  </ion-header>
+  <ion-content class="ion-mid" >
+    <!-- mid -->
+    <div class="ion-mid">
+
+      <div id="mid-main-div">
+        <div style="width: 90%;" >
+            <P id="p-head">Create Account</P>
+        </div>
+
+        <div class="form-div" >
+          <form class="form-div" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            
+            <!-- form -->
+            <div style="width: 89%; padding-right: 10px;">
+              
+              <!-- full name -->
+              <ion-input placeholder="Full-Name" formControlName="fullname" label="Full Name" type="text" helperText=" " errorText="Enter Your Name" required labelPlacement="stacked">
+                <ion-icon slot="start" name="person-circle-outline" ></ion-icon>
+              </ion-input>
+
+              <!-- Mobile -->
+              <ion-input placeholder="Phone Number" formControlName="phone"  label="Mobile No" type="Number" helperText=" " errorText="Enter your Mobile Number" required labelPlacement="stacked">
+                <ion-icon slot="start" name="call-outline" ></ion-icon>
+              </ion-input>
+
+              <!-- email -->
+              <ion-input placeholder="Email" formControlName="email" type="email" label="Email" helperText=" " errorText="Enter your mail" required labelPlacement="stacked">
+                <ion-icon slot="start" name="mail-outline" ></ion-icon>
+              </ion-input>
+            
+              <!-- password -->
+              <ion-input 
+              placeholder="Password"
+                required
+                formControlName="password" 
+                maxlength="18"
+                (ionFocus)="onPasswordChange()" 
+                labelPlacement="stacked" 
+                [type]="passwordVisible ? 'text' : 'password'" 
+                label="Password"
+                helperText="Ex. Abcd@123, Abcd123@"
+                errorText="Invalid Password type or min length is 8 char"
+              >
+                <ion-icon 
+                  slot="start" 
+                  name="lock-closed-outline" 
+                  
+                ></ion-icon>
+                <ion-button 
+                  *ngIf="pass" 
+                  (click)="togglePasswordVisibility()" 
+                  fill="clear" 
+                  slot="end" 
+                  aria-label="Show/hide"
+                >
+                  <ion-icon 
+                    slot="icon-only" 
+                    [name]="passwordVisible ? 'eye-off-outline' : 'eye-outline'" 
+                    
+                  ></ion-icon>
+                </ion-button>
+              </ion-input>
+            
+              <!-- confirm password -->
+              <ion-input 
+              placeholder="Confirm Password"
+                required
+                maxlength="18"
+                formControlName="confirmpassword" 
+                labelPlacement="stacked" 
+                type="password" 
+                label="Confirm Password"
+                helperText="Enter Password second time."
+                errorText="Password not match."
+              >
+                <ion-icon 
+                  slot="start" 
+                  name="lock-closed-outline" 
+                ></ion-icon>
+              </ion-input>
+                
+            </div>
+
+            <!-- Checkbox -->
+            <div style=" width: 90%; margin-top: 15px;">
+              <ion-checkbox id="ion-checkbox" (ionChange)="checked($event)" 
+                label-placement="end">
+                  I Agree With Privacy and Policy*
+              </ion-checkbox>
+            </div>
+            
+            <!-- error text -->
+            <div *ngIf="istextvisible" style=" width: 90%; margin-top: 10px;">
+              <p style="color: red; font-size: 12px;">Enter Valid credentils.</p>
+            </div>
+            
+            <!-- btn -->
+            <div style="width: 90%; margin-top: 30px; margin-bottom: 10px;">
+              <ion-button  strong="600" type="submit" shape="round" id="login-btn">
+                Sign Up <ion-icon color="white" name="arrow-forward-outline"></ion-icon>
+              </ion-button>
+            </div>
+          </form>
+        </div>
+        <!-- <div style="height: 30%; display: flex;"></div> -->
+      </div>
+
+    </div>
+</ion-content>
+<ion-footer class="footer" >
+  <div style="display: flex; justify-content: center;">
+    <!-- go to registration -->
+    <p style="color: black;">Already have an account? 
+      <a (click)="goToLogin()" style="color: #5516D9; font-weight: bold;">Sign In</a>
+    </p>
+  </div>
+</ion-footer>
+
+

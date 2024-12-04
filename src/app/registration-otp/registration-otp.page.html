@@ -1,0 +1,78 @@
+<ion-header [translucent]="true" style=" box-shadow: none !important;">
+  <ion-toolbar class="custom-toolbar">
+    
+    <ion-button fill="clear" slot="start" (click)="goBack()">
+      <ion-icon id="backicon" name="chevron-back-outline"></ion-icon>
+    </ion-button>
+    
+    <ion-title class="centered-title"><p style="color: #5516D9; font-weight: 700; font-size: 23px;">Verify OTP</p></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="main-content">
+    
+    <div>
+      <img src="../../assets/Images/otp-page.png" height="250px" width="250px" alt="otp-img">
+    </div>
+    
+    <div style="margin-top: 30px;">
+      <p id="psmall">Please Enter Verification code Sent to +91 {{number}}</p>
+      <p (click)="goBack()" id="pcolor">Change Number?</p>
+    </div>
+
+    <div style="width: auto;">
+
+      <div style="display: flex; justify-content: center; padding: 0; margin-top: 2%;">
+        <ion-card class="otpcard">
+          <ion-input 
+            #input1 
+            maxlength="1" 
+            type="text" 
+            class="centered-input" 
+            (input)="moveFocus($event, input1, input2, null)" 
+          ></ion-input>
+        </ion-card>
+        <ion-card class="otpcard">
+          <ion-input 
+            #input2 
+            maxlength="1" 
+            type="text" 
+            class="centered-input" 
+            (input)="moveFocus($event, input2, input3, input1)"  
+          ></ion-input>
+        </ion-card>
+        <ion-card class="otpcard">
+          <ion-input 
+            #input3 
+            maxlength="1" 
+            type="text" 
+            class="centered-input" 
+            (input)="moveFocus($event, input3, input4, input2)" 
+          ></ion-input>
+        </ion-card>
+        <ion-card class="otpcard">
+          <ion-input 
+            #input4 
+            maxlength="1" 
+            type="text" 
+            class="centered-input" 
+            (input)="moveFocus($event, input4, null, input3)"  
+          ></ion-input>
+        </ion-card>
+      </div>
+
+      <div style="margin-left: 10px; display: flex; justify-content: space-between;">
+        <p (click)="resend_otp(number)" id="pcolor">Resend Code?</p>
+        <p *ngIf="timerVisible" id="psmall-r">{{ minutes }}:{{ seconds }} Sec</p>
+      </div>
+    </div>
+
+    <div style="width: 80%; margin-top: 50px;">
+      <ion-button strong="600" type="button" (click)="combineInputs(input1, input2, input3, input4)" shape="round" id="login-btn">
+        Continue
+      </ion-button>
+    </div>
+    <div style="height: 70px;"></div>
+  </div>
+</ion-content>

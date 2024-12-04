@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+ion-content {
+    --background: white !important;
+}
+  .heading {
+    display: flex;
+    height: 20vh;
+    // border: 2px green solid;
+  }
+
+  #header-btn {
+    margin: 0; 
+    font-weight: bold;
+    align-items: center;
+    color: #5516D9;
+  }
+  
+  .container {
+    justify-content: center;
+    height: 48vh;
+    margin-top: 10px;
+    // border: 2px black solid;
+  }
+  
+  .image-container {
+    height: 100%; 
+    width: 100%;
+    text-align: center;
+  }
+
+  .image {
+    margin: 0;
+    object-fit: cover;
+    width: 220px;
+    height: 220px;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  #midtext {
+    font-family: 'Poppins', sans-serif;
+    display: flex; 
+    justify-content: center; 
+    width: 100%; 
+    margin-top: 5px;
+  }
+
+  #pheading {
+    font-size: 18px; 
+    font-weight: bold; 
+    margin-bottom: 3px; 
+    color: #263238;
+  }
+
+  #psmall {
+    font-size: 13.5px; 
+    margin: 0; 
+    color: #263238BD;
+  }
+  
+  .footer {
+    // border: 2px red solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32vh;
+    overflow: hidden;
+  }
+
+  #footer-btn {
+    align-items: center;
+    top: 55%;
+    font-weight: 600;
+    font-size: 18;
+    color: #5516D9;
+    --border-color: #5516D9
+  }
+
+  #login-btn {
+    top: 1px; 
+    width: 80%; 
+    --border-radius: 46px;  
+    --background: #5516D9; 
+    --color: white;
+  }
+  
+  .circle {
+    overflow: hidden;
+    width: 180vw;
+    top: 40%;
+    height: 80vh;
+    background-color: #E8DDFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; 
+  }
+
+  swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  swiper-slide {
+    display: flex;
+    color: black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #finalscreen {
+    height: 100%; 
+    width: 100%; 
+    align-items: center; 
+    flex-direction: column; 
+    display: flex;
+  }
+  

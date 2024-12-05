@@ -55,7 +55,7 @@ export class LoginPagePage{
 
   // goto forget-password page 
   goToForget() {
-    this.router.navigate(['forgot-password-page']);
+    this.router.navigate(['forgot-password-page' , {data: 'login'}]);
   }
 
 }

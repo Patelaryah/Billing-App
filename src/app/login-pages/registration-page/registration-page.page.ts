@@ -73,7 +73,7 @@ export class RegistrationPagePage {
       const data = this.loginForm.value
       console.log(this.loginForm.value)
       this.showToast()
-      this.router.navigate(['/registration-page-2', {data: 'registration', phonenumber: data.phone}])
+      this.router.navigate(['/otp-page', {data: 'registration', phonenumber: data.phone}])
     }
     else {
       this.istextvisible = true

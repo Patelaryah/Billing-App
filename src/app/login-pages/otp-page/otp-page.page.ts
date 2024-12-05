@@ -8,9 +8,9 @@ import { NavController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-registration-otp',
-  templateUrl: './registration-otp.page.html', //'./registration-otp.page.html',
-  styleUrls: ['./registration-otp.page.scss'],
+  selector: 'app-otp-page',
+  templateUrl: './otp-page.page.html', //'./otp-page.page.html',
+  styleUrls: ['./otp-page.page.scss'],
   standalone: true,
   imports: [IonInput, IonCard, IonButton, IonIcon, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
@@ -34,8 +34,7 @@ export class RegistrationPage2Page implements OnInit, OnDestroy {
     if (currentValue.length === 1 && nextInput) {
       nextInput.setFocus();
     }
-    // console.log(inputType);
-    
+
     // Move to the previous input when backspace is pressed and the current input is empty
     if (currentValue.length === 0 && previousInput && inputType === 'deleteContentBackward') {
       previousInput.setFocus();
@@ -48,8 +47,11 @@ export class RegistrationPage2Page implements OnInit, OnDestroy {
   }
 
   resend_otp(number: number){
-    console.log('ok');
-    console.log(number); 
+    // number for resend otp
+    console.log(number);
+
+    clearInterval(this.timerInterval);
+    this.startTimer();
   }
 
   minutes: string = '00';
@@ -93,15 +95,34 @@ export class RegistrationPage2Page implements OnInit, OnDestroy {
 
   combineInputs(input1: any, input2: any, input3: any, input4: any) {
     
-    if(input1.value && input2.value && input3.value && input4.value){
-      const combinedValue = `${input1.value}${input2.value}${input3.value}${input4.value}`;
-      console.log('Combined Value:', combinedValue);
-      this.router.navigate(['login-page']);
+    if(this.role == 'registration'){
+      if(input1.value && input2.value && input3.value && input4.value){
+        const combinedValue = `${input1.value}${input2.value}${input3.value}${input4.value}`;
+        console.log('Combined Value:', combinedValue);
+        this.router.navigate(['login-page']);
+      }
+      else
+      {
+        console.log("otp is not valid");
+      }
     }
-    else
-    {
-      console.log("otp is not valid");
+    else if(this.role == 'forget'){
+      if(input1.value && input2.value && input3.value && input4.value){
+        const combinedValue = `${input1.value}${input2.value}${input3.value}${input4.value}`;
+        console.log('Combined Value:', combinedValue);
+        this.router.navigate(['forgot-password-page']);
+      }
+      else
+      {
+        console.log("otp is not valid");
+      }
     }
+    else {
+      console.log("Error");
+      
+    }
+
   }
+
 
 }

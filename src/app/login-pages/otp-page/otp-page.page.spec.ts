@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RegistrationPage2Page } from './registration-otp.page';
+import { RegistrationPage2Page } from './otp-page.page';
 
 describe('RegistrationPage2Page', () => {
   let component: RegistrationPage2Page;

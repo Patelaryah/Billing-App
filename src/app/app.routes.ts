@@ -24,8 +24,12 @@ export const routes: Routes = [
     loadComponent: () => import('./login-pages/forgot-password-page/forgot-password-page.page').then( m => m.ForgotPasswordPagePage)
   },
   {
-    path: 'registration-page-2',
-    loadComponent: () => import('./registration-otp/registration-otp.page').then( m => m.RegistrationPage2Page)
+    path: 'otp-page',
+    loadComponent: () => import('./login-pages/otp-page/otp-page.page').then( m => m.RegistrationPage2Page)
+  },
+  {
+    path: 'home-page',
+    loadComponent: () => import('./Home-Pages/home-page/home-page.page').then( m => m.HomePagePage)
   },
 
 ];

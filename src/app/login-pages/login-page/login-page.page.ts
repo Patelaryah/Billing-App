@@ -4,7 +4,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { IonContent, IonInput, IonItem, IonButton, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { mailOutline, lockClosedOutline, eyeOffOutline, eyeOutline } from 'ionicons/icons';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -18,14 +18,28 @@ import { Router } from '@angular/router';
 export class LoginPagePage{
 
   loginForm: FormGroup;
+  // to check user is new or old
+  newuser: any
+  // show incorrect user in red color
+  validation = ''
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private route: ActivatedRoute) {
     addIcons({mailOutline, lockClosedOutline ,eyeOutline, eyeOffOutline});
 
     this.loginForm = new FormGroup({
       password: new FormControl('', [Validators.required, Validators.minLength(8)]),
       email: new FormControl('', [Validators.required, Validators.email])
     });
+
+    // in if old then execute if else execute else
+    if(route.snapshot.paramMap.get('data') == null || this.newuser == false)
+    {
+      this.newuser = false
+    }
+    else{
+      this.newuser = route.snapshot.paramMap.get('data')
+    }
+
   }
 
   // open close eye icon
@@ -42,9 +56,14 @@ export class LoginPagePage{
   
   // submit button (login)
   onSubmit(){
-    if(this.loginForm.valid){console.log(this.loginForm.value)}
+    if(this.loginForm.valid){
+      console.log(this.loginForm.value)
+      this.router.navigate(['home-page', {data: this.newuser}])
+      this.newuser = false
+    }
     else {
-      console.log("not valid");
+      this.validation = 'Incorrect Username or Password'
+      
     }
   }
 
@@ -55,6 +74,7 @@ export class LoginPagePage{
 
   // goto forget-password page 
   goToForget() {
+    // data for forget page render ui
     this.router.navigate(['forgot-password-page' , {data: 'login'}]);
   }
 

@@ -1,7 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators, } from '@angular/forms';
-import { IonContent, IonInput, IonItem, IonButton, IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonInput, IonButton, IonIcon, IonCheckbox, IonFooter, IonHeader } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { mailOutline, lockClosedOutline, eyeOffOutline, eyeOutline, personCircleOutline, chevronForwardOutline, arrowForwardOutline, callOutline } from 'ionicons/icons';
 import { Router } from '@angular/router';
@@ -12,9 +12,7 @@ import { ToastController } from '@ionic/angular'
   templateUrl: './registration-page.page.html',
   styleUrls: ['./registration-page.page.scss'],
   standalone: true,
-  imports: [IonIcon, IonInput, IonContent, CommonModule, FormsModule, IonButton, ReactiveFormsModule,
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA], 
+  imports: [IonHeader, IonFooter, IonCheckbox,  IonIcon, IonInput, IonContent, CommonModule, FormsModule, IonButton, ReactiveFormsModule ],
 })
 export class RegistrationPagePage {
 
@@ -22,7 +20,8 @@ export class RegistrationPagePage {
   ischecked = true
   passwordVisible: boolean = false;
   pass = false;
-  loginForm: FormGroup<any>;
+  loginForm: FormGroup;
+  
   constructor(private router: Router, private toastController: ToastController) {
     addIcons({personCircleOutline,callOutline,mailOutline,lockClosedOutline,arrowForwardOutline,chevronForwardOutline,eyeOutline,eyeOffOutline});
 
@@ -74,6 +73,7 @@ export class RegistrationPagePage {
       console.log(this.loginForm.value)
       this.showToast()
       this.router.navigate(['/otp-page', {data: 'registration', phonenumber: data.phone}])
+      this.istextvisible = false
     }
     else {
       this.istextvisible = true
@@ -81,6 +81,7 @@ export class RegistrationPagePage {
     }
   }
 
+  // goto login page
   goToLogin() {
     this.router.navigate(['login-page']);
   }

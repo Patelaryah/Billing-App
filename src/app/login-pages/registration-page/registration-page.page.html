@@ -10,12 +10,12 @@
   <ion-content class="ion-mid" >
     <!-- mid -->
     <div class="ion-mid">
-
+      <!-- head text -->
       <div id="mid-main-div">
         <div style="width: 90%;" >
             <P id="p-head">Create Account</P>
         </div>
-
+        <!-- registration form -->
         <div class="form-div" >
           <form class="form-div" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             
@@ -39,7 +39,7 @@
             
               <!-- password -->
               <ion-input 
-              placeholder="Password"
+                placeholder="Password"
                 required
                 formControlName="password" 
                 maxlength="18"
@@ -111,11 +111,12 @@
             </div>
           </form>
         </div>
-        <!-- <div style="height: 30%; display: flex;"></div> -->
+
       </div>
 
     </div>
 </ion-content>
+<!-- footer -->
 <ion-footer class="footer" >
   <div style="display: flex; justify-content: center;">
     <!-- go to registration -->
@@ -124,5 +125,3 @@
     </p>
   </div>
 </ion-footer>
-
-

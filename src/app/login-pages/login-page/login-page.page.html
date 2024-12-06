@@ -19,7 +19,7 @@
       <div class="form-div">
         <form class="form-div" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           
-          <!-- form -->
+          <!-- login form -->
           <div style="width: 95%; padding-right: 15px;">
             <ion-item>
               <ion-input formControlName="email" placeholder="Email" label="Email" labelPlacement="stacked" type="email">
@@ -64,7 +64,8 @@
           </div>
           
           <!-- btn -->
-          <div style="width: 90%; margin-top: 20px;">
+          <div style="width: 90%; margin-top: 10px;">
+            <p id="p-red">{{ validation }}</p>
             <ion-button strong="600" type="submit" shape="round" id="login-btn">
               Login
             </ion-button>
@@ -92,7 +93,7 @@
   <ion-content class="footer">
     <div style="display: flex; justify-content: center;">
       <!-- go to registration -->
-        <p style="color: black;">Don’t have an account? 
+        <p style="color: black; margin-top: 10px;">Don’t have an account? 
           <a (click)="goToRegistration()" style="color: #5516D9; font-weight: bold;">Sign up</a>
         </p>
         

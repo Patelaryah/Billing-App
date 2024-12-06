@@ -49,7 +49,7 @@ export class StartPage1Page {
   }
   // goto ligin page
   goToLogin() {
-    this.router.navigate(['/login-page'], { replaceUrl: true });
+    this.router.navigate(['/login-page', {data: true}], { replaceUrl: true });
   }
 
 }

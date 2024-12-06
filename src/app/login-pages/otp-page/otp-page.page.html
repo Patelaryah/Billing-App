@@ -1,6 +1,7 @@
+<!-- header -->
 <ion-header [translucent]="true" style=" box-shadow: none !important;">
   <ion-toolbar class="custom-toolbar">
-    
+    <!-- back button -->
     <ion-button fill="clear" slot="start" (click)="goBack()">
       <ion-icon id="backicon" name="chevron-back-outline"></ion-icon>
     </ion-button>
@@ -8,21 +9,23 @@
     <ion-title class="centered-title"><p style="color: #5516D9; font-weight: 700; font-size: 23px;">Verify OTP</p></ion-title>
   </ion-toolbar>
 </ion-header>
-
+<!-- content -->
 <ion-content [fullscreen]="true">
   <div class="main-content">
-    
+    <!-- img -->
     <div>
       <img src="../../assets/Images/otp-page.png" height="250px" width="250px" alt="otp-img">
     </div>
     
     <div style="margin-top: 30px;">
-      <p id="psmall">Please Enter Verification code Sent to +91 {{number}}</p>
+      <p id="psmall">Please Enter Verification code Sent to <strong>+91 {{number}} </strong></p>
+      <!-- go back for change number -->
       <p (click)="goBack()" id="pcolor">Change Number?</p>
     </div>
 
     <div style="width: auto;">
 
+      <!-- for otp input -->
       <div style="display: flex; justify-content: center; padding: 0; margin-top: 2%;">
         <ion-card class="otpcard">
           <ion-input 
@@ -62,12 +65,19 @@
         </ion-card>
       </div>
 
+      <!-- resend otp -->
       <div style="margin-left: 10px; display: flex; justify-content: space-between;">
         <p (click)="resend_otp(number)" id="pcolor">Resend Code?</p>
+        <!-- 59 sec time -->
         <p *ngIf="timerVisible" id="psmall-r">{{ minutes }}:{{ seconds }} Sec</p>
       </div>
     </div>
 
+    <!-- error text -->
+    <div style="width: 85%; margin-top: 15px;">
+      <p style="color: red; font-size: 15px;">{{validation}}</p>
+    </div>
+    <!-- btn for go next page after vslidation -->
     <div style="width: 80%; margin-top: 50px;">
       <ion-button strong="600" type="button" (click)="combineInputs(input1, input2, input3, input4)" shape="round" id="login-btn">
         Continue

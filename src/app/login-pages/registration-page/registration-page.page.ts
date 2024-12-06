@@ -1,6 +1,6 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators, } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators, } from '@angular/forms';
 import { IonContent, IonInput, IonButton, IonIcon, IonCheckbox, IonFooter, IonHeader } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { mailOutline, lockClosedOutline, eyeOffOutline, eyeOutline, personCircleOutline, chevronForwardOutline, arrowForwardOutline, callOutline } from 'ionicons/icons';
@@ -12,7 +12,8 @@ import { ToastController } from '@ionic/angular'
   templateUrl: './registration-page.page.html',
   styleUrls: ['./registration-page.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonFooter, IonCheckbox,  IonIcon, IonInput, IonContent, CommonModule, FormsModule, IonButton, ReactiveFormsModule ],
+  imports: [ IonHeader, IonFooter, IonCheckbox,  IonIcon, IonInput, IonContent, CommonModule, 
+    FormsModule, IonButton, ReactiveFormsModule ],
 })
 export class RegistrationPagePage {
 
@@ -35,19 +36,32 @@ export class RegistrationPagePage {
       confirmpassword: new FormControl('', [Validators.required, Validators.minLength(8), 
         Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$')
       ]),
-    },
-    {
-      validators: this.passwordMatchValidator
-    }
-    );
+    });
   }
 
-  // password and C-password validation
-  passwordMatchValidator(group: AbstractControl) {
-    const password = group.get('password')?.value;
-    const confirmPassword = group.get('confirmpassword')?.value;
-    return password === confirmPassword ? null : { passwordMismatch: true };
-  }
+     // password and C-password validation
+     passwordMatchValidator() {
+      const password = this.loginForm.get('password')?.value;
+      const confirmPassword = this.loginForm.get('confirmpassword')?.value;
+      if(password != '' && confirmPassword != ''){
+        return password === confirmPassword;
+      }
+      else {return false}
+    }
+
+    // on focus out thrn accure in CPassword
+    passwordsDoNotMatch = ''
+    helpervisible = true
+    onInputBlur() {
+      if(this.passwordMatchValidator()){
+        this.passwordsDoNotMatch = ''
+        this.helpervisible = true        
+      }
+      else {
+        this.passwordsDoNotMatch = 'Password not match'
+        this.helpervisible = false
+      }
+    }
 
   // open close eye icon
   togglePasswordVisibility() {
@@ -67,17 +81,24 @@ export class RegistrationPagePage {
   // on submit check valid or not then send data
   istextvisible = false
   onSubmit(){
-    if(this.loginForm.valid){
-      this.istextvisible = false
-      const data = this.loginForm.value
-      console.log(this.loginForm.value)
-      this.showToast()
-      this.router.navigate(['/otp-page', {data: 'registration', phonenumber: data.phone}])
-      this.istextvisible = false
-    }
-    else {
-      this.istextvisible = true
-      console.log("not valid");
+    const password = this.loginForm.get('password')?.value;
+    const confirmPassword = this.loginForm.get('confirmpassword')?.value;
+    if(password == confirmPassword)
+    {  
+
+      if(this.loginForm.valid){
+        this.istextvisible = false
+        const data = this.loginForm.value
+        console.log(this.loginForm.value)
+        this.showToast()
+        this.router.navigate(['/otp-page', {data: 'registration', phonenumber: data.phone}])
+        this.istextvisible = false
+
+      }
+      else {
+        this.istextvisible = true
+        console.log("not valid");
+      }
     }
   }
 
@@ -94,7 +115,8 @@ export class RegistrationPagePage {
       duration: 3000, 
       position: 'bottom' ,
       cssClass: 'custom-toast',
-    }).then((toast) => { toast.present(); }); }
+    }).then((toast) => { toast.present(); }); 
+  }
 
 }
 

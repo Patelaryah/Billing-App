@@ -5,9 +5,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home-page</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+  <ion-button expand="block" (click)="presentToast('bottom')">Present Toast At the Bottom</ion-button>
+  <ion-button id="open-toast">Open Toast</ion-button>
+  <!-- <ion-toast
+    trigger="open-toast"
+    [duration]="3000"
+    message="Hello Styled World!"
+    class="custom-toast"
+    [buttons]="toastButtons"
+  ></ion-toast> -->
 </ion-content>

@@ -64,34 +64,37 @@
                 >
                   <ion-icon 
                     slot="icon-only" 
-                    [name]="passwordVisible ? 'eye-off-outline' : 'eye-outline'" 
+                    [name]="passwordVisible ? 'eye-outline' : 'eye-off-outline'" 
                     
                   ></ion-icon>
                 </ion-button>
               </ion-input>
-            
+            <!-- 145 115 180 -->
               <!-- confirm password -->
               <ion-input 
-              placeholder="Confirm Password"
+                placeholder="Confirm Password"
                 required
                 maxlength="18"
                 formControlName="confirmpassword" 
                 labelPlacement="stacked" 
                 type="password" 
                 label="Confirm Password"
-                helperText="Enter Password second time."
-                errorText="Password not match."
+                [helperText]="helpervisible ? 'Confirm your Password.' : '' "
+                errorText=" "
+                (ionBlur)="onInputBlur()"
               >
                 <ion-icon 
                   slot="start" 
                   name="lock-closed-outline" 
                 ></ion-icon>
               </ion-input>
-                
+              <div style="width: 100%;">
+                <p style="color: #f24c58; margin-top: 3px; font-size: 12px">{{passwordsDoNotMatch}}</p>
+              </div>
             </div>
 
             <!-- Checkbox -->
-            <div style=" width: 90%; margin-top: 15px;">
+            <div style=" width: 90%; margin-top: 15px; padding-left: 5px;">
               <ion-checkbox id="ion-checkbox" (ionChange)="checked($event)" 
                 label-placement="end">
                   I Agree With Privacy and Policy*
@@ -113,7 +116,6 @@
         </div>
 
       </div>
-
     </div>
 </ion-content>
 <!-- footer -->

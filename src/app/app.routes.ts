@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { HomePagePage } from './Home-Pages/home-page/home-page.page';
 
 export const routes: Routes = [
 
@@ -6,6 +7,35 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'start-page1',
     pathMatch: 'full',
+  },
+  // {
+  //   path: '',
+  //   redirectTo: 'home',
+  //   pathMatch: 'full',
+  // },
+  {
+    path: 'home',
+    component: HomePagePage,
+    children: [
+      {
+        path: 'invoice',
+        loadComponent: () => import('./Home-Pages/invoice/invoice.page').then( m => m.InvoicePage)
+      },
+      {
+        path: 'parties',
+        loadComponent: () => import('./Home-Pages/parties/parties.page').then( m => m.PartiesPage)
+      },
+      {
+        path: 'profile',
+        loadComponent: () => import('./Home-Pages/profile/profile.page').then( m => m.ProfilePage)
+      },
+      {
+        path: '',
+        redirectTo: 'invoice',
+        pathMatch: 'full',
+      },
+    ],
+    
   },
   {
     path: 'start-page1',
@@ -28,8 +58,21 @@ export const routes: Routes = [
     loadComponent: () => import('./login-pages/otp-page/otp-page.page').then( m => m.RegistrationPage2Page)
   },
   {
-    path: 'home-page',
+    path: 'home',
     loadComponent: () => import('./Home-Pages/home-page/home-page.page').then( m => m.HomePagePage)
   },
+  {
+    path: 'profile',
+    loadComponent: () => import('./Home-Pages/profile/profile.page').then( m => m.ProfilePage)
+  },
+  {
+    path: 'invoice',
+    loadComponent: () => import('./Home-Pages/invoice/invoice.page').then( m => m.InvoicePage)
+  },
+  {
+    path: 'parties',
+    loadComponent: () => import('./Home-Pages/parties/parties.page').then( m => m.PartiesPage)
+  },
+ 
 
 ];

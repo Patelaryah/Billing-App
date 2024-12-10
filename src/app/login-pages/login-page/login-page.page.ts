@@ -58,7 +58,8 @@ export class LoginPagePage{
   onSubmit(){
     if(this.loginForm.valid){
       console.log(this.loginForm.value)
-      this.router.navigate(['home-page', {data: this.newuser}])
+      // this.router.navigate(['home/invoice', {data: this.newuser}])
+      this.router.navigate(['home/invoice'])
       this.newuser = false
     }
     else {

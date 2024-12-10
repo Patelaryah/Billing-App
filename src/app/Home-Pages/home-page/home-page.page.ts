@@ -1,35 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonToast, IonButtons } from '@ionic/angular/standalone';
-import { ToastController } from '@ionic/angular';
+import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonContent, IonToolbar, IonMenu, IonHeader, IonButtons, IonTitle } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { notificationsOutline, clipboard, add, personCircleOutline, peopleOutline } from 'ionicons/icons';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.page.html',
   styleUrls: ['./home-page.page.scss'],
   standalone: true,
-  imports: [IonButtons, IonToast, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonTitle, IonButtons, IonHeader, IonToolbar, IonContent, IonIcon, RouterModule, 
+    IonTabButton, IonTabBar, IonTabs, CommonModule, FormsModule, IonTabs, IonMenu],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomePagePage {
 
-  constructor(private toastController: ToastController) {}
-
-  async presentToast(position: 'top' | 'middle' | 'bottom') {
-    const toast = await this.toastController.create({
-      message: 'Hello World!',
-      duration: 1500,
-      position: position,
-      cssClass: 'toast',
-    });
-
-    await toast.present();
+  constructor() {
+    addIcons({notificationsOutline,add,peopleOutline,personCircleOutline,clipboard});
   }
 
-  public toastButtons = [
-    {
-      text: 'Dismiss',
-      role: 'cancel',
-    },
-  ];
+  // change heading name by changing tab
+  heading = ''
+  logTabName(event: any) {
+    const selectedTab = event.tab;
+    // this.tabname = selectedTab
+    if(selectedTab == 'invoice'){
+      this.heading = 'Invoice'
+    }
+    else if (selectedTab == 'parties'){
+      this.heading = 'Parties'
+    }
+    console.log('Selected Tab:', selectedTab);
+  }
+
+
+  Heading() {
+    
+  }
+
 }

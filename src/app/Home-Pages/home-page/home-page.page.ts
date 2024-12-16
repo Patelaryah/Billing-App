@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonContent, IonToolbar, IonMenu, IonHeader, IonButtons, IonTitle } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { notificationsOutline, clipboard, add, personCircleOutline, peopleOutline } from 'ionicons/icons';
+import { notificationsOutline, clipboard, add, personCircleOutline, people } from 'ionicons/icons';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
 export class HomePagePage {
 
   constructor() {
-    addIcons({notificationsOutline,add,peopleOutline,personCircleOutline,clipboard});
+    addIcons({notificationsOutline,add,clipboard,people,personCircleOutline});
   }
 
   // change heading name by changing tab
@@ -32,11 +32,6 @@ export class HomePagePage {
       this.heading = 'Parties'
     }
     console.log('Selected Tab:', selectedTab);
-  }
-
-
-  Heading() {
-    
   }
 
 }

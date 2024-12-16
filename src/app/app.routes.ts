@@ -19,15 +19,15 @@ export const routes: Routes = [
     children: [
       {
         path: 'invoice',
-        loadComponent: () => import('./Home-Pages/invoice/invoice.page').then( m => m.InvoicePage)
+        loadComponent: () => import('./Home-Pages/_Invoice/invoice/invoice.page').then( m => m.InvoicePage)
       },
       {
         path: 'parties',
-        loadComponent: () => import('./Home-Pages/parties/parties.page').then( m => m.PartiesPage)
+        loadComponent: () => import('./Home-Pages/_Parties/parties/parties.page').then( m => m.PartiesPage)
       },
       {
         path: 'profile',
-        loadComponent: () => import('./Home-Pages/profile/profile.page').then( m => m.ProfilePage)
+        loadComponent: () => import('./Home-Pages/_Profile/profile/profile.page').then( m => m.ProfilePage)
       },
       {
         path: '',
@@ -63,16 +63,20 @@ export const routes: Routes = [
   },
   {
     path: 'profile',
-    loadComponent: () => import('./Home-Pages/profile/profile.page').then( m => m.ProfilePage)
+    loadComponent: () => import('./Home-Pages/_Profile/profile/profile.page').then( m => m.ProfilePage)
   },
   {
     path: 'invoice',
-    loadComponent: () => import('./Home-Pages/invoice/invoice.page').then( m => m.InvoicePage)
+    loadComponent: () => import('./Home-Pages/_Invoice/invoice/invoice.page').then( m => m.InvoicePage)
   },
   {
     path: 'parties',
-    loadComponent: () => import('./Home-Pages/parties/parties.page').then( m => m.PartiesPage)
+    loadComponent: () => import('./Home-Pages/_Parties/parties/parties.page').then( m => m.PartiesPage)
+  },  {
+    path: 'invoice-preview',
+    loadComponent: () => import('./Home-Pages/_Invoice/invoice-preview/invoice-preview.page').then( m => m.InvoicePreviewPage)
   },
+
  
 
 ];

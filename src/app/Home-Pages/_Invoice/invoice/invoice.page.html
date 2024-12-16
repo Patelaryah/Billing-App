@@ -1,0 +1,131 @@
+<ion-header [translucent]="true" style=" box-shadow: none !important; height: 56px;">
+  <ion-toolbar>
+    <ion-title>invoice</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="content">
+
+  <div class="segments">
+    <ion-segment swipe-gesture="true" style="border-radius: 5px;">
+      <ion-segment-button value="first" style="border-right: 2px solid #5516D9;" content-id="first">
+        <ion-label>Recent</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="second" style="border-right: 2px solid #5516D9;" content-id="second">
+        <ion-label>Last Week</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="third" content-id="third">
+        <ion-label>Last Month</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <ion-segment-view>
+    <ion-segment-content id="first">
+      
+      <div *ngIf="isnull1">
+        <ion-card *ngFor="let item of data" (click)="oncardClick(item.invoice_no)">
+          <ion-card-header>
+            <div style="display: flex; justify-content: space-between; padding: 5px 0 10px 0;">
+              <p id="card-header-text">Invoice No</p>
+              <p id="card-header-text">#<span>{{ ('00000' + item.invoice_no).slice(-5) }}</span></p>
+            </div>
+            <span style="width: 100%; padding: 0; margin: 0; display: flex; border-bottom: 1px dashed black;"></span>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <div style="display: flex; justify-content: space-between;">
+              <p id="card-header-text">{{ item.name }}</p>
+              <p 
+                id="card-header-text" 
+                [style.color]="item.payment === 'paid' ? '#69B677' : '#E8090CB0'">
+                {{ item.payment === 'paid' ? 'Paid' : 'Overdue' }}
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <p id="card-header-text">{{ item.date }}</p>
+              <p id="card-header-text">₹<span>{{ item.money }}</span></p>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div *ngIf="!isnull1" class="img-div">
+        <img src="../../../../assets/Images/invoice.png" height="200px" width="200px">
+      </div>
+      
+    </ion-segment-content>
+
+    <ion-segment-content id="second">
+
+      <div *ngIf="isnull2">
+        <ion-card *ngFor="let item of data">
+          <ion-card-header>
+            <div style="display: flex; justify-content: space-between; padding: 5px 0 10px 0;">
+              <p id="card-header-text">Invoice No</p>
+              <p id="card-header-text">#<span>{{ ('00000' + item.invoice_no).slice(-5) }}</span></p>
+            </div>
+            <span style="width: 100%; padding: 0; margin: 0; display: flex; border-bottom: 1px dashed black;"></span>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <div style="display: flex; justify-content: space-between;">
+              <p id="card-header-text">{{ item.name }}</p> <!-- Dynamically display name -->
+              <p 
+                id="card-header-text" 
+                [style.color]="item.payment === 'paid' ? '#69B677' : '#E8090CB0'">
+                {{ item.payment === 'paid' ? 'Paid' : 'Overdue' }} <!-- Dynamically display payment status with color -->
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <p id="card-header-text">{{ item.date }}</p> <!-- Dynamically display date -->
+              <p id="card-header-text">₹<span>{{ item.money }}</span></p> <!-- Dynamically display money -->
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div *ngIf="!isnull2" class="img-div">
+        <img src="../../../../assets/Images/invoice.png" height="200px" width="200px">
+      </div>
+
+    </ion-segment-content>
+
+    <ion-segment-content id="third">
+
+      <div *ngIf="isnull3">
+        <ion-card *ngFor="let item of data">
+          <ion-card-header>
+            <div style="display: flex; justify-content: space-between; padding: 5px 0 10px 0;">
+              <p id="card-header-text">Invoice No</p>
+              <p id="card-header-text">#<span>{{ ('00000' + item.invoice_no).slice(-5) }}</span></p>
+            </div>
+            <span style="width: 100%; padding: 0; margin: 0; display: flex; border-bottom: 1px dashed black;"></span>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <div style="display: flex; justify-content: space-between;">
+              <p id="card-header-text">{{ item.name }}</p> <!-- Dynamically display name -->
+              <p 
+                id="card-header-text" 
+                [style.color]="item.payment === 'paid' ? '#69B677' : '#E8090CB0'">
+                {{ item.payment === 'paid' ? 'Paid' : 'Overdue' }} <!-- Dynamically display payment status with color -->
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <p id="card-header-text">{{ item.date }}</p> <!-- Dynamically display date -->
+              <p id="card-header-text">₹<span>{{ item.money }}</span></p> <!-- Dynamically display money -->
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div *ngIf="!isnull3" class="img-div">
+        <img src="../../../../assets/Images/invoice.png" height="200px" width="200px">
+      </div>
+
+    </ion-segment-content>
+
+  </ion-segment-view>
+
+</ion-content>

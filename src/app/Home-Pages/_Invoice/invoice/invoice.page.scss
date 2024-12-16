@@ -1,0 +1,91 @@
+ ion-toolbar, ion-segment-button, ion-card {
+    --background: white !important;
+    --box-shadow: none !important;
+    --color: black !important;
+}
+
+.content {
+    --background: white !important; 
+    --color: black;
+    height: 50%;
+    overflow: auto;
+    overflow: hidden;
+}
+ion-segment-view {
+    height: fit-content !important;
+    margin-top: 50px;
+}
+
+#card-header-text {
+    font-weight: 600; 
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+ion-label {
+    --color: black;
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+ion-card {
+    border: solid #BEBEBE 1.2px;
+    box-shadow: none;
+}
+
+.img-div {
+    display: flex; 
+    margin-top: 5px; 
+    justify-content: center; 
+    padding-top: 40%;
+}
+
+@media (min-width: 768px) {
+    .img-div {
+        padding-top: 15%; /* Decrease the padding for tablet view */
+    }
+}
+
+@media (min-width: 1024px) {
+    .img-div {
+        padding-top: 10%; /* Further decrease for larger screens (e.g., tablets or desktops) */
+    }
+}
+
+.segments {
+    padding: 0 0 0 0; 
+    position: fixed; 
+    z-index: 1; 
+    background-color: white;
+}
+
+ion-segment-button::part(indicator-background) {
+    background: #5516D9;
+  }
+  
+  /* Material Design styles */
+  ion-segment-button.md::part(native) {
+    color: #000;
+  }
+  
+  .segment-button-checked.md::part(native) {
+    color: #5516D9;
+  }
+  
+  ion-segment-button.md::part(indicator-background) {
+    height: 4px;
+  }
+  
+  /* iOS styles */
+  ion-segment-button.ios::part(native) {
+    color: #5516D9;
+  }
+  
+  .segment-button-checked.ios::part(native) {
+    color: #fff;
+  }
+  
+  ion-segment-button.ios::part(indicator-background) {
+    border-radius: 20px;
+  }

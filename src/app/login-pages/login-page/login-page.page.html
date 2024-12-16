@@ -29,8 +29,9 @@
               
             <ion-item>
               <ion-input 
-              placeholder="Password"
+                placeholder="Password"
                 formControlName="password" 
+                maxlength="18"
                 (ionFocus)="onPasswordChange()" 
                 labelPlacement="stacked" 
                 [type]="passwordVisible ? 'text' : 'password'" 

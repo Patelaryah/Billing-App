@@ -1,0 +1,30 @@
+ion-content {
+    --background: white !important;
+}
+
+ion-header, ion-toolbar {
+    --background: white !important;
+    --color: black;
+}
+
+.custom-toolbar {
+    position: relative; 
+}
+
+#backicon {
+    font-size: 2rem;
+    color: black;
+}
+
+.centered-title {
+    position:fixed; 
+    left: 50%; 
+    transform: translateX(-50%); /* Centers the title by adjusting for its width */
+    text-align: center;
+    width: 70%;
+    bottom: 0.1px;
+    top: 1px;
+    // border: #000 solid;
+  }
+
+

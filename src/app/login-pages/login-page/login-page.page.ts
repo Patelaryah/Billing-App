@@ -27,8 +27,10 @@ export class LoginPagePage implements OnInit {
     addIcons({mailOutline, lockClosedOutline ,eyeOutline, eyeOffOutline});
 
     this.loginForm = new FormGroup({
-      password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-      email: new FormControl('', [Validators.required, Validators.email])
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8), 
+        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$')
+      ]),
     });
 
   }

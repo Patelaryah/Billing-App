@@ -22,7 +22,7 @@ export class ForgotPasswordPagePage {
   forgetFormN: FormGroup
   forgetFormP: FormGroup
   data: any
-  
+  header: any
   visible: any
   
   constructor(private navCtrl: NavController, public router: Router, private route: ActivatedRoute, private toastController: ToastController) {
@@ -45,9 +45,12 @@ export class ForgotPasswordPagePage {
     this.data = route.snapshot.paramMap.get('data')
     
     if(this.data == 'login'){
+      this.header = 'Forget Password'
       this.visible = true
+
     }
     else {
+      this.header = 'New Password'
       this.visible = false
     }
     console.log(this.visible);
@@ -118,9 +121,6 @@ export class ForgotPasswordPagePage {
       console.log(this.forgetFormP.value);
       this.showToast('Your Password has been changed')
       this.router.navigate(['/login-page'])
-    }
-    else {
-      console.log("error");
     }
   }
 

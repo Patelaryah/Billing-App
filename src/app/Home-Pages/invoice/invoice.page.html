@@ -6,4 +6,10 @@
 
 <ion-content [fullscreen]="true" style="--background: white !important; --color: black;">
   <p>hgsgfdsjghf</p>
+  <ion-button (click)="setValue()">Set Value</ion-button>
+  <ion-button (click)="getValue()">Get Value</ion-button>
+  <ion-button (click)="removeValue()">Remove Value</ion-button>
+  <ion-button (click)="clearStorage()">Clear Storage</ion-button>
+
+  <div>{{ value }}</div>
 </ion-content>

@@ -6,6 +6,7 @@ import { addIcons } from 'ionicons';
 import { chevronBack, chevronForward } from 'ionicons/icons';
 import { register } from 'swiper/element/bundle';
 import { Router } from '@angular/router';
+import { AppDataService } from 'src/app/Storage/app-data.service';
 
 register();
 
@@ -31,8 +32,16 @@ export class StartPage1Page {
     '../../../assets/Images/Start-Page-3.png',
   ];
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private appDataService: AppDataService) {
     addIcons({ chevronBack, chevronForward });
+    // let data: any
+    // (async () => {
+    //   data = await this.appDataService.get('startup');
+    //   console.log('str: ',data);
+    // })();
+    
+    
+
   }
   // when user swipe then occure
   onSlideChange() {
@@ -48,8 +57,9 @@ export class StartPage1Page {
     }
   }
   // goto ligin page
-  goToLogin() {
-    this.router.navigate(['/login-page', {data: true}], { replaceUrl: true });
+  async goToLogin() {
+    await this.appDataService.set('startup', false)
+    this.router.navigate(['/login-page'], { replaceUrl: true });
   }
 
 }

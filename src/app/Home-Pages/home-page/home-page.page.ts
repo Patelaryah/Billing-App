@@ -25,7 +25,6 @@ export class HomePagePage {
   heading = ''
   logTabName(event: any) {
     const selectedTab = event.tab;
-    // this.tabname = selectedTab
     if(selectedTab == 'invoice'){
       this.heading = 'Invoice'
     }

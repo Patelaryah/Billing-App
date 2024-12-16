@@ -81,8 +81,15 @@ export class InvoicePage {
     this.isnull3 = true
    }
 
-  oncardClick(data: any) {
-    this.router.navigate(['invoice-preview', {invoice_no: data}]);
+  oncardClick(invoice_no: any, name: any, payment: any, date: any, money: any) {
+    this.router.navigate(['invoice-preview', 
+      {
+        invoice_no: invoice_no,
+        name: name,
+        payment: payment,
+        date: date,
+        money: money
+    }]);
   }
 
 }

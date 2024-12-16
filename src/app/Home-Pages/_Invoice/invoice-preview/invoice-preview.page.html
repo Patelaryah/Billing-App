@@ -13,9 +13,70 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">invoice_preview</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <!-- first -->
+  <div style="height: 15%; display: flex; justify-content: space-between; background-color: #F7F4FF; align-items: center;">
+    <div style="padding: 0 20px 0 20px;">
+      <p style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">Your Invoice is Ready</p>
+      <p style="font-size: 28px; font-weight: 600; color: #5516D9;">{{name}}</p>
+    </div>
+    <div style="margin-right: 10px;">
+      <img src="../../../../assets/icon/green-right.png" height="58px" width="58px">
+    </div>
+  </div>
+
+  <!--  -->
+  <div>
+    <div style="display: flex; padding: 15px 20px 0 20px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Invoice</p>
+            <p style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Date: <span style="font-weight: 400;">{{date}}</span></p>
+            <p style="font-size: 14px; font-weight: 600;">Invoice: <span style="font-weight: 400;">{{invoice_no}}</span></p>
+            
+          </ion-col>
+          <ion-col style="justify-content: end; display: flex;">
+            <img style="border-radius: 18px;" src="" height="54px" width="130px">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </div>
+    
+    <!-- dash line -->
+    <div style="display: flex; margin: 15px 0 15px 0; padding: 0 20px 0 20px;">
+      <span style="width: 100%; border: #5516D9 dashed 0.6px;"></span>
+    </div>
+
+    <!--  -->
+    <div style="display: flex; padding: 0 20px 0 20px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            
+            <p style="font-size: 15px; font-weight: 400; color: #848484; margin-bottom: 8px;">From</p>
+            <p style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">Groot Technologies LLP</p>
+            <p style="font-size: 15px; font-weight: 400; color: #848484; margin-bottom: 4px;">Ahmedabad ,AHMED</p>
+            <p style="font-size: 14px; font-weight: 400; color: #848484;">9638527412</p>
+            
+          </ion-col>
+          <ion-col size="4" style="border: #5516D9 solid;">
+            <p style="font-size: 15px; font-weight: 400; color: #848484; margin-bottom: 8px;">To</p>
+            <p style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">Google</p>
+            <p style="font-size: 15px; font-weight: 400; color: #848484; margin-bottom: 4px;">Mumbai ,MH</p>
+            <p style="font-size: 14px; font-weight: 400; color: #848484;">7523852964</p>
+            
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!--  -->
+    <div>
+      
+    </div>
+
+  </div>
+
 </ion-content>

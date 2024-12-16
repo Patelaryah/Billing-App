@@ -1,5 +1,6 @@
 ion-content {
     --background: white !important;
+    --color: black;
 }
 
 ion-header, ion-toolbar {
@@ -27,4 +28,7 @@ ion-header, ion-toolbar {
     // border: #000 solid;
   }
 
-
+ion-row, ion-grid, ion-col, p {
+    padding: 0;
+    margin: 0;
+}

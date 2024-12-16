@@ -24,7 +24,7 @@
     <ion-segment-content id="first">
       
       <div *ngIf="isnull1">
-        <ion-card *ngFor="let item of data" (click)="oncardClick(item.invoice_no)">
+        <ion-card *ngFor="let item of data" (click)="oncardClick( ('00000' + item.invoice_no).slice(-5), item.name, item.payment, item.date, item.money)">
           <ion-card-header>
             <div style="display: flex; justify-content: space-between; padding: 5px 0 10px 0;">
               <p id="card-header-text">Invoice No</p>

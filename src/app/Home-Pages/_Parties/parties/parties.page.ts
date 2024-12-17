@@ -10,11 +10,8 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
   standalone: true,
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
-export class PartiesPage implements OnInit {
-
+export class PartiesPage {
+  nodata = true
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

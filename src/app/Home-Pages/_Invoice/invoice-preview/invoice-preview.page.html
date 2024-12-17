@@ -1,21 +1,22 @@
 <ion-header [translucent]="true" style=" box-shadow: none !important;">
   <ion-toolbar class="custom-toolbar">
-    
+
     <ion-button fill="clear" slot="start" (click)="goBack()">
       <ion-icon id="backicon" name="chevron-back-outline"></ion-icon>
     </ion-button>
-    
+
     <ion-title class="centered-title">
       <p style="color: #5516D9; font-weight: 700; font-size: 23px;">header</p>
     </ion-title>
-  
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
+
   <!-- first -->
-  <div style="height: 15%; display: flex; justify-content: space-between; background-color: #F7F4FF; align-items: center;">
+  <div
+    style="height: 15%; display: flex; justify-content: space-between; background-color: #F7F4FF; align-items: center;">
     <div style="padding: 0 20px 0 20px;">
       <p style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">Your Invoice is Ready</p>
       <p style="font-size: 28px; font-weight: 600; color: #5516D9;">{{name}}</p>
@@ -32,18 +33,20 @@
         <ion-row>
           <ion-col>
             <p style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Invoice</p>
-            <p style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Date: <span style="font-weight: 400;">{{date}}</span></p>
-            <p style="font-size: 14px; font-weight: 600;">Invoice: <span style="font-weight: 400;">{{invoice_no}}</span></p>
-            
+            <p style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Date: <span
+                style="font-weight: 400;">{{date}}</span></p>
+            <p style="font-size: 14px; font-weight: 600;">Invoice: <span style="font-weight: 400;">{{invoice_no}}</span>
+            </p>
+
           </ion-col>
           <ion-col style="justify-content: end; display: flex;">
             <img style="border-radius: 18px;" src="" height="54px" width="130px">
           </ion-col>
         </ion-row>
       </ion-grid>
-      
+
     </div>
-    
+
     <!-- dash line -->
     <div style="display: flex; margin: 15px 0 15px 0; padding: 0 20px 0 20px;">
       <span style="width: 100%; border: #5516D9 dashed 0.6px;"></span>
@@ -54,29 +57,76 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            
-            <p style="font-size: 15px; font-weight: 400; color: #848484; margin-bottom: 8px;">From</p>
-            <p style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">Groot Technologies LLP</p>
-            <p style="font-size: 15px; font-weight: 400; color: #848484; margin-bottom: 4px;">Ahmedabad ,AHMED</p>
-            <p style="font-size: 14px; font-weight: 400; color: #848484;">9638527412</p>
-            
+
+            <p id="Ptype">From</p>
+            <p id="Pcompany">Groot Technologies LLP</p>
+            <p id="Pgray" style="margin-bottom: 4px;">Ahmedabad ,AHMED</p>
+            <p id="Pgray">9638527412</p>
+
           </ion-col>
-          <ion-col size="4" style="border: #5516D9 solid;">
-            <p style="font-size: 15px; font-weight: 400; color: #848484; margin-bottom: 8px;">To</p>
-            <p style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">Google</p>
-            <p style="font-size: 15px; font-weight: 400; color: #848484; margin-bottom: 4px;">Mumbai ,MH</p>
-            <p style="font-size: 14px; font-weight: 400; color: #848484;">7523852964</p>
-            
+          <ion-col size="4">
+            <p id="Ptype">To</p>
+            <p id="Pcompany">Google</p>
+            <p id="Pgray" style="margin-bottom: 4px;">Mumbai ,MH</p>
+            <p id="Pgray">7523852964</p>
+
           </ion-col>
         </ion-row>
       </ion-grid>
     </div>
 
-    <!--  -->
-    <div>
-      
+    <!-- table -->
+    <div style="margin-top: 10px; padding: 0 20px 0 20px;">
+      <ion-grid>
+        <!-- header -->
+        <ion-row class="ion-padding-vertical">
+          <ion-col size="6" id="P_item_header" style="border-left: none;">DISCRIPTION</ion-col>
+          <ion-col id="P_item_header_m">QTY</ion-col>
+          <ion-col id="P_item_header" style="border-right: none;">SUBTOTAL</ion-col>
+        </ion-row>
+        <!-- product items -->
+        <ion-row class="ion-padding-vertical" *ngFor="let item of items">
+          <ion-col size="6" id="P_item" style="border-left: none;">{{ item.description }}</ion-col>
+          <ion-col id="P_item_m">{{ item.qty }}</ion-col>
+          <ion-col id="P_item" style="border-right: none;"><span>₹</span>{{ item.subtotal }}</ion-col>
+        </ion-row>
+        <!-- total -->
+        <ion-row style="padding-top: 5px;">
+          <ion-col size="6"></ion-col>
+          <ion-col id="P_total_h">SUBTOTAL</ion-col>
+          <ion-col id="P_total"><span>₹</span> 20,000</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6"></ion-col>
+          <ion-col id="P_total_h">TAX</ion-col>
+          <ion-col id="P_total">0</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6" style="margin-bottom: 5px;"></ion-col>
+          <ion-col id="P_total_h" style="margin-bottom: 5px;">DISCOUNT</ion-col>
+          <ion-col id="P_total" style="margin-bottom: 5px;"><span>₹</span>-10<span>%</span></ion-col>
+        </ion-row>
+
+        <ion-row style="border-top: #5516D9 dashed 1px;">
+          <ion-col size="6" style="padding: 10px;"></ion-col>
+          <ion-col id="P_total_h" style="padding: 10px;">TOTAL</ion-col>
+          <ion-col id="P_total" style="padding: 10px;"><span>₹</span> 20,700</ion-col>
+        </ion-row>
+      </ion-grid>
     </div>
 
+    <!-- Note -->
+    <div class="notes">
+      <ion-textarea color="string" style=" padding: 0 10px 0 10px;"
+        placeholder="Note"
+        [autoGrow]="true"
+      ></ion-textarea>
+    </div>
+    <!-- button -->
+    <div style="margin-top: 10px; padding: 0 10% 0 10%; display: flex; justify-content: center;">
+      <ion-button id="btn_outline" fill="outline"><img height="24px" style="margin-bottom: 2px; margin-right: 2px;" width="24px" src="../../../../assets/icon/download_icon.png">Download</ion-button>
+      <ion-button id="btn_fill"><ion-icon slot="start" style="margin-bottom: 2px;" name="share-social"></ion-icon>Share</ion-button>
+    </div>
   </div>
 
 </ion-content>

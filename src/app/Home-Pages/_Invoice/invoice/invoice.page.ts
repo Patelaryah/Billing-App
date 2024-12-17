@@ -30,7 +30,8 @@ export class InvoicePage {
   isnull2 = false
   isnull3 = false
   status: string = 'paid';
-  data: Data[] = [
+  data: Data[] = 
+  [
     {
       invoice_no: 101,
       name: 'John Doe',
@@ -74,6 +75,16 @@ export class InvoicePage {
       money: 300
     },
   ];
+
+  data1: Data[] = [
+    {
+      invoice_no: 101,
+      name: 'John Doe',
+      payment: 'paid',
+      date: '2024-12-16',
+      money: 200
+    },
+  ]
 
   constructor(private appDataService: AppDataService, private router: Router) {
     this.isnull1 = true

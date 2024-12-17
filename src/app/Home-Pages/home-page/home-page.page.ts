@@ -5,14 +5,15 @@ import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonContent, IonToolbar, IonM
 import { addIcons } from 'ionicons';
 import { notificationsOutline, clipboard, add, personCircleOutline, people } from 'ionicons/icons';
 import { RouterModule } from '@angular/router';
+import { NotificationPage } from "../notification/notification.page";
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.page.html',
   styleUrls: ['./home-page.page.scss'],
   standalone: true,
-  imports: [IonTitle, IonButtons, IonHeader, IonToolbar, IonContent, IonIcon, RouterModule, 
-    IonTabButton, IonTabBar, IonTabs, CommonModule, FormsModule, IonTabs, IonMenu],
+  imports: [IonTitle, IonButtons, IonHeader, IonToolbar, IonContent, IonIcon, RouterModule,
+    IonTabButton, IonTabBar, IonTabs, CommonModule, FormsModule, IonMenu],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomePagePage {

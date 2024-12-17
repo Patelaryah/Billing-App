@@ -7,7 +7,7 @@
 <ion-content [fullscreen]="true" class="content">
 
   <div class="segments">
-    <ion-segment swipe-gesture="true" style="border-radius: 5px;">
+    <ion-segment swipe-gesture="true" style="border-radius: 5px; padding-left: 10px; padding-right: 10px;">
       <ion-segment-button value="first" style="border-right: 2px solid #5516D9;" content-id="first">
         <ion-label>Recent</ion-label>
       </ion-segment-button>
@@ -19,6 +19,7 @@
       </ion-segment-button>
     </ion-segment>
   </div>
+  <div style="height: 50px;" ></div>
 
   <ion-segment-view>
     <ion-segment-content id="first">
@@ -35,7 +36,7 @@
         
           <ion-card-content>
             <div style="display: flex; justify-content: space-between;">
-              <p id="card-header-text">{{ item.name }}</p>
+              <p id="card-text">{{ item.name }}</p>
               <p 
                 id="card-header-text" 
                 [style.color]="item.payment === 'paid' ? '#69B677' : '#E8090CB0'">
@@ -43,7 +44,7 @@
               </p>
             </div>
             <div style="display: flex; justify-content: space-between;">
-              <p id="card-header-text">{{ item.date }}</p>
+              <p id="card-text">{{ item.date }}</p>
               <p id="card-header-text">₹<span>{{ item.money }}</span></p>
             </div>
           </ion-card-content>
@@ -59,7 +60,7 @@
     <ion-segment-content id="second">
 
       <div *ngIf="isnull2">
-        <ion-card *ngFor="let item of data">
+        <ion-card *ngFor="let item of data1">
           <ion-card-header>
             <div style="display: flex; justify-content: space-between; padding: 5px 0 10px 0;">
               <p id="card-header-text">Invoice No</p>
@@ -70,7 +71,7 @@
         
           <ion-card-content>
             <div style="display: flex; justify-content: space-between;">
-              <p id="card-header-text">{{ item.name }}</p> <!-- Dynamically display name -->
+              <p id="card-text">{{ item.name }}</p> <!-- Dynamically display name -->
               <p 
                 id="card-header-text" 
                 [style.color]="item.payment === 'paid' ? '#69B677' : '#E8090CB0'">
@@ -78,7 +79,7 @@
               </p>
             </div>
             <div style="display: flex; justify-content: space-between;">
-              <p id="card-header-text">{{ item.date }}</p> <!-- Dynamically display date -->
+              <p id="card-text">{{ item.date }}</p> <!-- Dynamically display date -->
               <p id="card-header-text">₹<span>{{ item.money }}</span></p> <!-- Dynamically display money -->
             </div>
           </ion-card-content>
@@ -105,7 +106,7 @@
         
           <ion-card-content>
             <div style="display: flex; justify-content: space-between;">
-              <p id="card-header-text">{{ item.name }}</p> <!-- Dynamically display name -->
+              <p id="card-text">{{ item.name }}</p> <!-- Dynamically display name -->
               <p 
                 id="card-header-text" 
                 [style.color]="item.payment === 'paid' ? '#69B677' : '#E8090CB0'">
@@ -113,7 +114,7 @@
               </p>
             </div>
             <div style="display: flex; justify-content: space-between;">
-              <p id="card-header-text">{{ item.date }}</p> <!-- Dynamically display date -->
+              <p id="card-text">{{ item.date }}</p> <!-- Dynamically display date -->
               <p id="card-header-text">₹<span>{{ item.money }}</span></p> <!-- Dynamically display money -->
             </div>
           </ion-card-content>

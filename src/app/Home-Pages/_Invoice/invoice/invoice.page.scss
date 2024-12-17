@@ -7,9 +7,10 @@
 .content {
     --background: white !important; 
     --color: black;
-    height: 50%;
-    overflow: auto;
-    overflow: hidden;
+    height: 100%;
+    // overflow: auto;
+    // overflow: hidden;
+    
 }
 ion-segment-view {
     height: fit-content !important;
@@ -21,17 +22,29 @@ ion-segment-view {
     font-size: 18px;
     padding: 0;
     margin: 0;
+    margin-bottom: 2px;
+}
+
+#card-text {
+  // font-weight: 500; 
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2px;
 }
 
 ion-label {
     --color: black;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 11px;
+    margin: 0;
+    padding: auto;
   }
 
 ion-card {
     border: solid #BEBEBE 1.2px;
     box-shadow: none;
+    padding: 10px;
 }
 
 .img-div {
@@ -65,27 +78,14 @@ ion-segment-button::part(indicator-background) {
   }
   
   /* Material Design styles */
-  ion-segment-button.md::part(native) {
-    color: #000;
-  }
-  
-  .segment-button-checked.md::part(native) {
-    color: #5516D9;
-  }
-  
-  ion-segment-button.md::part(indicator-background) {
-    height: 4px;
-  }
-  
-  /* iOS styles */
-  ion-segment-button.ios::part(native) {
-    color: #5516D9;
-  }
-  
-  .segment-button-checked.ios::part(native) {
-    color: #fff;
-  }
-  
-  ion-segment-button.ios::part(indicator-background) {
-    border-radius: 20px;
+  // ion-segment-button.md::part(native) {
+  //   color: #000;
+  // }
+
+  ion-segment-button {
+    --indicator-box-shadow: transparent !important;
+    --background-checked: #5516D9 !important;
+    margin: 0;
+    --color-checked: white !important;
+    padding: 0;
   }

@@ -1,13 +1,16 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" style=" box-shadow: none !important; height: 56px;">
   <ion-toolbar>
     <ion-title>parties</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">parties</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div *ngIf="nodata" class="img_div">
+    <img src="../../../../assets/Images/parties.png" height="230px" width="300px">
+  </div>
+
+  <div *ngIf="!nodata">
+    
+  </div>
+
 </ion-content>

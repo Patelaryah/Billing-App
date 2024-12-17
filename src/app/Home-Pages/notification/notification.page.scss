@@ -1,0 +1,24 @@
+ion-toolbar, ion-content, ion-toolbar {
+    --background: white !important;
+    --box-shadow: none !important;
+    --color: black !important;
+}
+
+.no_data_div {
+    display: flex; 
+    justify-content: center; 
+    padding-top: 40%;
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .no_data_div {
+        padding-top: 16%; /* Decrease the padding for tablet view */
+    }
+}
+
+@media (min-width: 1024px) {
+    .no_data_div {
+        padding-top: 11%; /* Further decrease for larger screens (e.g., tablets or desktops) */
+    }
+}

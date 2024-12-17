@@ -32,3 +32,113 @@ ion-row, ion-grid, ion-col, p {
     padding: 0;
     margin: 0;
 }
+
+#Ptype {
+    font-size: 15px; 
+    font-weight: 400; 
+    color: #848484; 
+    margin-bottom: 8px;
+}
+
+#Pcompany {
+    font-size: 15px; 
+    font-weight: 600; 
+    margin-bottom: 4px;
+}
+
+#Pgray {
+    font-size: 14px; 
+    font-weight: 400; 
+    color: #848484;
+}
+
+#P_item_header {
+    border-top: dashed 1px #D9D9D9;
+    text-align: center;
+    border-bottom: dashed 1px #D9D9D9;
+    font-weight: 500;
+    font-size: 12px;
+    color: #848484;
+    padding: 5px;
+  }
+
+  #P_item {
+    border-bottom: dashed 1px #D9D9D9;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+#P_item_header_m {
+    border: dashed 1px #D9D9D9; 
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    color: #848484;
+    padding: 5px;
+}
+
+#P_item_m {
+    border: dashed 1px #D9D9D9;
+    border-top: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  #P_total_h {
+    color: #848484;
+    // border: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  #P_total {
+
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  ion-textarea::part(native)::-webkit-input-placeholder {
+    color: #5516D9; /* Placeholder color for WebKit browsers (e.g., Chrome, Safari) */
+  }
+  
+  ion-textarea::part(native):-ms-input-placeholder {
+    color: #5516D9; /* Placeholder color for Internet Explorer */
+  }
+  
+  ion-textarea::part(native)::placeholder {
+    color: #5516D9; /* Placeholder color for modern browsers */
+  }
+
+  .notes {
+    min-height: 100px; 
+    padding-bottom: 5px; 
+    margin: 15px 20px 0 20px; 
+    display: flex; 
+    border: #5516D9 dashed; 
+    border-radius: 12px;
+  }
+  
+  #btn_fill {
+    height: 45px; 
+    width: 50%; 
+    --color: white !important;
+    font-weight: 600;
+    --background: #5516D9 !important;
+  }
+
+  #btn_outline {
+    height: 45px; 
+    width: 50%; 
+    --color: #5516D9 !important;
+    font-weight: 600;
+    --border-color: #5516D9;
+  }
+

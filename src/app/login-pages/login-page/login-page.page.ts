@@ -44,7 +44,7 @@ export class LoginPagePage implements OnInit {
   async load() {
     let data: any = await this.appDataService.get('startup');
     if(data == undefined || data == true){
-      this.router.navigate(['start-page1']);
+      this.router.navigate(['start-page1'], {replaceUrl: true});
     }
   }
 

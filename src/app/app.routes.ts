@@ -76,6 +76,10 @@ export const routes: Routes = [
     path: 'invoice-preview',
     loadComponent: () => import('./Home-Pages/_Invoice/invoice-preview/invoice-preview.page').then( m => m.InvoicePreviewPage)
   },
+  {
+    path: 'notification',
+    loadComponent: () => import('./Home-Pages/notification/notification.page').then( m => m.NotificationPage)
+  },
 
  
 

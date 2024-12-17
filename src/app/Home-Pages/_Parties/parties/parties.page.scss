@@ -1,0 +1,26 @@
+ion-content {
+    --background: white !important;
+}
+
+ion-header, ion-toolbar, ion-title, ion-content {
+    --color: black !important;
+}
+
+.img_div {
+    display: flex; 
+    justify-content: center; 
+    padding-top: 40%;
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .img_div {
+        padding-top: 16%; /* Decrease the padding for tablet view */
+    }
+}
+
+@media (min-width: 1024px) {
+    .img_div {
+        padding-top: 11%; /* Further decrease for larger screens (e.g., tablets or desktops) */
+    }
+}

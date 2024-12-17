@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonIcon, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonIcon, IonGrid, IonRow, IonCol, IonTextarea, IonInput, IonItem } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { chevronBackOutline } from 'ionicons/icons';
+import { chevronBackOutline, downloadOutline, shareSocial } from 'ionicons/icons';
 import { NavController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 
@@ -13,7 +13,8 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './invoice-preview.page.html',
   styleUrls: ['./invoice-preview.page.scss'],
   standalone: true,
-  imports: [IonCol, IonRow, IonGrid, IonIcon, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [ IonTextarea, IonCol, IonRow, IonGrid, IonIcon, IonButton, IonContent, IonHeader, 
+    IonTitle, IonToolbar, CommonModule, FormsModule ]
 })
 export class InvoicePreviewPage {
   invoice_no: any = ''
@@ -22,8 +23,14 @@ export class InvoicePreviewPage {
   date: any = ''
   money: any = ''
 
+  items = [
+    { description: 'First Item', qty: 1, subtotal: 20000 },
+    { description: 'Second Item', qty: 1, subtotal: 20000 },
+    // Add more items as needed
+  ];
+
   constructor(private navCtrl: NavController, private route: ActivatedRoute) { 
-    addIcons({chevronBackOutline});
+    addIcons({chevronBackOutline,downloadOutline,shareSocial});
 
     this.invoice_no = route.snapshot.paramMap.get('invoice_no')
     this.name = route.snapshot.paramMap.get('name')

@@ -32,6 +32,9 @@ export class HomePagePage {
     else if (selectedTab == 'parties'){
       this.heading = 'Parties'
     }
+    else if (selectedTab == 'profile'){
+      this.heading = 'Profile'
+    }
     console.log('Selected Tab:', selectedTab);
   }
 

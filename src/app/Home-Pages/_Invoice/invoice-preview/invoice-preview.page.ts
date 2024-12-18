@@ -22,6 +22,8 @@ export class InvoicePreviewPage {
   payment: any = ''
   date: any = ''
   money: any = ''
+  isActive: any
+
 
   items = [
     { description: 'First Item', qty: 1, subtotal: 20000 },
@@ -37,6 +39,7 @@ export class InvoicePreviewPage {
     this.payment = route.snapshot.paramMap.get('payment')
     this.date = route.snapshot.paramMap.get('date')
     this.money = route.snapshot.paramMap.get('money')
+    this.isActive = route.snapshot.paramMap.get('isActive')
     
     console.log(this.invoice_no, this.name, this.payment, this.date, this.money);
     

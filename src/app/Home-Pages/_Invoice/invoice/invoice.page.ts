@@ -1,7 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonSegmentButton, IonSegment } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardContent, IonSegmentButton, IonSegment, IonSegmentView, IonSegmentContent } from '@ionic/angular/standalone';
 import { AppDataService } from 'src/app/Storage/app-data.service';
 import { Router } from '@angular/router';
 
@@ -20,7 +20,7 @@ export interface Data {
   styleUrls: ['./invoice.page.scss'],
   standalone: true,
   imports: [IonSegment, IonSegmentButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, 
-    FormsModule ],
+    FormsModule, IonSegmentView, IonSegmentContent, IonCard, IonCardHeader, IonCardContent ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
@@ -99,7 +99,8 @@ export class InvoicePage {
         name: name,
         payment: payment,
         date: date,
-        money: money
+        money: money,
+        isActive: true
     }]);
   }
 

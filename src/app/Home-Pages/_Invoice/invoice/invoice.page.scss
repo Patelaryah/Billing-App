@@ -22,15 +22,21 @@ ion-segment-view {
     font-size: 18px;
     padding: 0;
     margin: 0;
-    margin-bottom: 2px;
+}
+
+ion-card-header {
+    padding: 3px 10px 3px 10px;
+}
+
+ion-card-content {
+    padding: 3px 10px 3px 10px;
 }
 
 #card-text {
-  // font-weight: 500; 
   font-size: 18px;
   padding: 0;
   margin: 0;
-  margin-bottom: 2px;
+//   padding-bottom: 3px;
 }
 
 ion-label {
@@ -44,7 +50,7 @@ ion-label {
 ion-card {
     border: solid #BEBEBE 1.2px;
     box-shadow: none;
-    padding: 10px;
+    // padding: 10px;
 }
 
 .img-div {

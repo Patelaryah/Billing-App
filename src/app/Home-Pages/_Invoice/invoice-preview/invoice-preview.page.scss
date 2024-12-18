@@ -28,6 +28,14 @@ ion-header, ion-toolbar {
     // border: #000 solid;
   }
 
+  .header_div {
+    height: 15%; 
+    display: flex; 
+    justify-content: space-between; 
+    background-color: #F7F4FF; 
+    align-items: center;
+  }
+
 ion-row, ion-grid, ion-col, p {
     padding: 0;
     margin: 0;
@@ -118,11 +126,20 @@ ion-row, ion-grid, ion-col, p {
   }
 
   .notes {
-    min-height: 100px; 
+    min-height: 90px; 
     padding-bottom: 5px; 
     margin: 15px 20px 0 20px; 
     display: flex; 
-    border: #5516D9 dashed; 
+    border: #5516D9 dashed 1px; 
+    border-radius: 12px;
+  }
+
+  .notes2 {
+    min-height: 70px; 
+    padding-bottom: 5px; 
+    margin: 15px 20px 0 20px; 
+    display: flex; 
+    border: #5516D9 dashed 1px; 
     border-radius: 12px;
   }
   

@@ -15,8 +15,7 @@
 <ion-content [fullscreen]="true">
 
   <!-- first -->
-  <div
-    style="height: 15%; display: flex; justify-content: space-between; background-color: #F7F4FF; align-items: center;">
+  <div *ngIf="isActive" class="header_div">
     <div style="padding: 0 20px 0 20px;">
       <p style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">Your Invoice is Ready</p>
       <p style="font-size: 28px; font-weight: 600; color: #5516D9;">{{name}}</p>
@@ -24,6 +23,14 @@
     <div style="margin-right: 10px;">
       <img src="../../../../assets/icon/green-right.png" height="58px" width="58px">
     </div>
+  </div>
+  <!-- header 2 with if condition -->
+  <div *ngIf="!isActive" class="header_div" style="flex-direction: column; padding-top: 5px; min-height: 120px;">
+    <!-- <div style="padding: 0 20px 0 20px; display: flex; justify-content: center; border: #5516D9 solid;"> -->
+      <img src="../../../../assets/icon/ready_invoice.png" height="58px" width="58px">
+      <p style="font-size: 16px; font-weight: 600;">Your Invoice is Ready</p>
+      <p style="font-size: 12px; color: #999999; padding-bottom: 10px;">Download the invoice or send it to your Customer</p>
+    <!-- </div> -->
   </div>
 
   <!--  -->
@@ -33,8 +40,8 @@
         <ion-row>
           <ion-col>
             <p style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Invoice</p>
-            <p style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Date: <span
-                style="font-weight: 400;">{{date}}</span></p>
+            <p style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Date: 
+              <span style="font-weight: 400;">{{date}}</span></p>
             <p style="font-size: 14px; font-weight: 600;">Invoice: <span style="font-weight: 400;">{{invoice_no}}</span>
             </p>
 
@@ -49,7 +56,7 @@
 
     <!-- dash line -->
     <div style="display: flex; margin: 15px 0 15px 0; padding: 0 20px 0 20px;">
-      <span style="width: 100%; border: #5516D9 dashed 0.6px;"></span>
+      <span style="width: 100%; border: #5516D9 dashed 1px;"></span>
     </div>
 
     <!--  -->
@@ -116,7 +123,7 @@
     </div>
 
     <!-- Note -->
-    <div class="notes">
+    <div class="notes" [ngClass]="{'notes': isActive, 'notes2': !isActive}">
       <ion-textarea color="string" style=" padding: 0 10px 0 10px;"
         placeholder="Note"
         [autoGrow]="true"

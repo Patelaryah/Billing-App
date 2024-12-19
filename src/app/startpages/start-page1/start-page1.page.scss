@@ -71,7 +71,8 @@ ion-content {
     align-items: center;
     top: 55%;
     font-weight: 600;
-    font-size: 18;
+    font-size: 18px;
+    height: 44px;
     color: #5516D9;
     --border-color: #5516D9
   }
@@ -79,6 +80,8 @@ ion-content {
   #login-btn {
     top: 1px; 
     width: 80%; 
+    height: 57px;
+    font-size: 20px;
     --border-radius: 46px;  
     --background: #5516D9; 
     --color: white;

@@ -4,10 +4,10 @@ ion-toolbar, ion-content, ion-card {
     --color: black !important;
 }
 
-.content {
-    display: flex;
-    border: solid black;
-}
+// .content {
+//     display: flex;
+//     border: solid black;
+// }
 
 .customer-img{
     position:absolute;
@@ -38,3 +38,40 @@ ion-toolbar, ion-content, ion-card {
         text-transform: none;   
     }
 }
+
+.div_content {
+    position: absolute; 
+    top: 50%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+ion-card {
+    --box-shadow: none !important;
+}
+
+// .div_content {
+//     position: absolute; 
+//     top: 50%; 
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     width: 100%;
+//     padding: 5px;
+//     box-sizing: border-box;
+//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); /* Add shadow here */
+//     background-color: #fff; /* Ensure a white background for the card look */
+//     border-radius: 10px; /* Add rounded corners if needed */
+// }
+
+// ion-card {
+//     width: 85% !important;
+//     // margin-top: 50px;
+//     // padding: auto;
+//     // box-shadow: none !important; /* Remove shadow from ion-card */
+// }

@@ -27,8 +27,8 @@ export class LoginPagePage implements OnInit {
     addIcons({mailOutline, lockClosedOutline ,eyeOutline, eyeOffOutline});
 
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8), 
+      email: new FormControl('asd@ad', [Validators.required, Validators.email]),
+      password: new FormControl('Asdf@1234', [Validators.required, Validators.minLength(8), 
         Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$')
       ]),
     });
@@ -65,7 +65,7 @@ export class LoginPagePage implements OnInit {
     if(this.loginForm.valid){
       console.log(this.loginForm.value)
       
-      this.router.navigate(['home/invoice'])
+      this.router.navigate(['home', {replaceUrl: true}])
     }
     else {
       this.validation = 'Incorrect Username or Password'

@@ -10,7 +10,8 @@ import { chevronForward, logOutOutline, personCircle } from 'ionicons/icons';
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
   standalone: true,
-  imports: [IonFooter, IonIcon, IonLabel, IonButton, IonCardContent, IonCard, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonFooter, IonIcon, IonLabel, IonButton, IonCardContent, IonCard, IonContent, IonHeader, 
+    IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class ProfilePage {
 

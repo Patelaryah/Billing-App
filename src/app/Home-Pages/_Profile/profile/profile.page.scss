@@ -11,9 +11,10 @@ ion-toolbar, ion-content, ion-card {
 
 .customer-img{
     position:absolute;
-    border-radius: 50%; 
-    height: 101px;
-    width: 101px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
@@ -22,6 +23,7 @@ ion-toolbar, ion-content, ion-card {
 
   ion-button {
     margin-bottom: 10px;
+    --border-color: #A1A1A1;
     .justify-content-space-between {
         display: flex;
         flex-direction: row;
@@ -42,24 +44,29 @@ ion-toolbar, ion-content, ion-card {
 .div_content {
     position: absolute; 
     top: 50%; 
+    height: 91vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding: 5px;
-    box-sizing: border-box;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
-
 }
 
-ion-card {
-    --box-shadow: none !important;
+#btn_icon_l {
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+    color: black;
 }
 
+#btn_text {
+    font-size: 16px;
+    color: black;
+}
 
-// ion-card {
-//     width: 85% !important;
-//     // margin-top: 50px;
-//     // padding: auto;
-//     // box-shadow: none !important; /* Remove shadow from ion-card */
-// }
+#btn_icon_r {
+    height: 24px;
+    width: 24px;
+    color: black;
+}

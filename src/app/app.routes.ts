@@ -80,6 +80,10 @@ export const routes: Routes = [
     path: 'notification',
     loadComponent: () => import('./Home-Pages/notification/notification.page').then( m => m.NotificationPage)
   },
+  {
+    path: 'add-parties',
+    loadComponent: () => import('./Home-Pages/_Parties/add-parties/add-parties.page').then( m => m.AddPartiesPage)
+  },
 
  
 

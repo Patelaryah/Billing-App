@@ -1,116 +1,108 @@
-<ion-header [translucent]="true"  style=" box-shadow: none !important; height: 56px;">
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
   <!-- Background Image -->
   <div style="position: relative; display: flex;">
-    <img
-      width="100%"
-      height="200px"
-      src="../../../../assets/Images/profile-home.png"
-    >
+    <img width="100%" height="250px" src="../../../../assets/Images/profile-home.png">
     
     <!-- Positioned Content -->
     <div class="div_content">
       <!-- purple image -->
       <div class="customer-img">
         <img src="../../../../assets/icon/user.png" height="100px" width="100px" style="border-radius: 50%;">
+        <p style="font-size: 16px; margin-top: 5px; margin-bottom: 4px;" >Nitin kumar Patil</p>
+        <p style="font-size: 12px; color: #949494; margin: 0px;">Nitinkumar1234&#64;gmail.com</p>
       </div>
 
       <!-- user image with content -->
-      <ion-card style="width: 85%; margin-top: 50px;">
-        <ion-card-content style="padding-top: 70px;">
-          <!--  -->
+      <ion-card style="width: 85%; margin-top: 50px; --box-shadow: none !important;">
+        <ion-card-content style="padding-top: 120px;">
+          <!-- btn 1 -->
           <ion-button fill="outline" expand="block">
             <div class="justify-content-space-between">
               <div style="display: flex; align-items: center;">
-                <ion-icon style="font-size: 24px; margin-right: 10px;" name="person-circle"></ion-icon>
-                <ion-label slot="start" style="font-size: 16px;">Outline</ion-label>
+                <ion-icon id="btn_icon_l" name="person-circle"></ion-icon>
+                <ion-label slot="start" id="btn_text">Profile</ion-label>
               </div>
-              <ion-icon style="font-size: 24px;" slot="end" name="chevron-forward"></ion-icon>
+              <ion-icon id="btn_icon_r" slot="end" name="chevron-forward"></ion-icon>
             </div>
           </ion-button>
-          <!--  -->
+          <!-- btn 2 -->
           <ion-button fill="outline" expand="block">
             <div class="justify-content-space-between">
               <div style="display: flex; align-items: center;">
-                <ion-icon style="font-size: 24px; margin-right: 10px;" name="person-circle"></ion-icon>
-                <ion-label slot="start" style="font-size: 16px;">Outline</ion-label>
+                <ion-icon id="btn_icon_l" name="clipboard"></ion-icon>
+                <ion-label slot="start" id="btn_text">Invoice</ion-label>
               </div>
-              <ion-icon style="font-size: 24px;" slot="end" name="chevron-forward"></ion-icon>
+              <ion-icon id="btn_icon_r" slot="end" name="chevron-forward"></ion-icon>
             </div>
           </ion-button>
-          <!--  -->
+          <!-- btn 3 -->
           <ion-button fill="outline" expand="block">
             <div class="justify-content-space-between">
               <div style="display: flex; align-items: center;">
-                <ion-icon style="font-size: 24px; margin-right: 10px;" name="person-circle"></ion-icon>
-                <ion-label slot="start" style="font-size: 16px;">Outline</ion-label>
+                <ion-icon id="btn_icon_l" name="people"></ion-icon>
+                <ion-label slot="start" id="btn_text">Parties</ion-label>
               </div>
-              <ion-icon style="font-size: 24px;" slot="end" name="chevron-forward"></ion-icon>
+              <ion-icon id="btn_icon_r" slot="end" name="chevron-forward"></ion-icon>
             </div>
           </ion-button>
-          <!--  -->
+          <!-- btn 4 -->
           <ion-button fill="outline" expand="block">
             <div class="justify-content-space-between">
               <div style="display: flex; align-items: center;">
-                <ion-icon style="font-size: 24px; margin-right: 10px;" name="person-circle"></ion-icon>
-                <ion-label slot="start" style="font-size: 16px;">Outline</ion-label>
+                <ion-icon id="btn_icon_l" name="notifications"></ion-icon>
+                <ion-label slot="start" id="btn_text">Payment Reminders</ion-label>
               </div>
-              <ion-icon style="font-size: 24px;" slot="end" name="chevron-forward"></ion-icon>
+              <ion-icon id="btn_icon_r" slot="end" name="chevron-forward"></ion-icon>
             </div>
           </ion-button>
-          <!--  -->
+          <!-- btn 5 -->
           <ion-button fill="outline" expand="block">
             <div class="justify-content-space-between">
               <div style="display: flex; align-items: center;">
-                <ion-icon style="font-size: 24px; margin-right: 10px;" name="person-circle"></ion-icon>
-                <ion-label slot="start" style="font-size: 16px;">Outline</ion-label>
+                <ion-icon id="btn_icon_l" name="document-text"></ion-icon>
+                <ion-label slot="start" id="btn_text">Bills</ion-label>
               </div>
-              <ion-icon style="font-size: 24px;" slot="end" name="chevron-forward"></ion-icon>
+              <ion-icon id="btn_icon_r" slot="end" name="chevron-forward"></ion-icon>
             </div>
           </ion-button>
-          <!--  -->
+          <!-- btn 6 -->
           <ion-button fill="outline" expand="block">
             <div class="justify-content-space-between">
               <div style="display: flex; align-items: center;">
-                <ion-icon style="font-size: 24px; margin-right: 10px;" name="person-circle"></ion-icon>
-                <ion-label slot="start" style="font-size: 16px;">Outline</ion-label>
+                <ion-icon id="btn_icon_l" name="key"></ion-icon>
+                <ion-label slot="start" id="btn_text">Security</ion-label>
               </div>
-              <ion-icon style="font-size: 24px;" slot="end" name="chevron-forward"></ion-icon>
+              <ion-icon id="btn_icon_r" slot="end" name="chevron-forward"></ion-icon>
             </div>
           </ion-button>
-          <!--  -->
+          <!-- btn 7 -->
           <ion-button fill="outline" expand="block">
             <div class="justify-content-space-between">
               <div style="display: flex; align-items: center;">
-                <ion-icon style="font-size: 24px; margin-right: 10px;" name="person-circle"></ion-icon>
-                <ion-label slot="start" style="font-size: 16px;">Outline</ion-label>
+                <ion-icon id="btn_icon_l" name="help-circle-outline"></ion-icon>
+                <ion-label slot="start" id="btn_text"> Help & Support</ion-label>
               </div>
-              <ion-icon style="font-size: 24px;" slot="end" name="chevron-forward"></ion-icon>
+              <ion-icon id="btn_icon_r" slot="end" name="chevron-forward"></ion-icon>
             </div>
           </ion-button>
-          <!--  -->
+          <!-- btn 8 -->
           <ion-button fill="outline" expand="block">
             <div class="justify-content-space-between">
               <div style="display: flex; align-items: center;">
-                <ion-icon style="font-size: 24px; margin-right: 10px;" name="person-circle"></ion-icon>
-                <ion-label slot="start" style="font-size: 16px;">Outline</ion-label>
+                <ion-icon id="btn_icon_l" name="log-out-outline"></ion-icon>
+                <ion-label slot="start" id="btn_text">Logout</ion-label>
               </div>
-              <ion-icon style="font-size: 24px;" slot="end" name="chevron-forward"></ion-icon>
+              <ion-icon id="btn_icon_r" slot="end" name="chevron-forward"></ion-icon>
             </div>
           </ion-button>
-
+          
         </ion-card-content>
       </ion-card>
     </div>
   </div>
-  <ion-footer style="height: 500px;">
 
-  </ion-footer>
 </ion-content>
 
 

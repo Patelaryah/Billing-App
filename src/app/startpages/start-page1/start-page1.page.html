@@ -18,21 +18,21 @@
       <swiper-container (swiperslidechange)="onSlideChange()" *ngIf="isvisible" [pagination]="true">
         <swiper-slide>
           <img [src]="images[0]" class="image" alt="Slide Image 1" />
-          <div style="width: 80%; display: flex; flex-direction: column;">
+          <div id="div_text">
             <p id="pheading">Manage Work more Easy</p>
             <p id="psmall">We Have a Vary Easy Fast  Application Process</p>
           </div>
         </swiper-slide>
         <swiper-slide>
           <img [src]="images[1]" class="image" alt="Slide Image 2"/>
-          <div style="width: 80%; display: flex; flex-direction: column;">
+          <div id="div_text">
             <p id="pheading">Fast and Easy Application</p>
             <p id="psmall">Get ready for seamless bill payments and effrotiess money transfer</p>
           </div>
         </swiper-slide>
         <swiper-slide>
           <img [src]="images[1]" class="image" alt="Slide Image 3" />
-          <div style="width: 80%; display: flex; flex-direction: column;">
+          <div id="div_text">
             <p id="pheading">Fast and Easy Application</p>
             <p id="psmall">Get ready for seamless bill payments and effrotiess money transfer</p>
           </div>
@@ -42,8 +42,8 @@
       <!-- last page -->
       <div *ngIf="!isvisible">
         <div id="finalscreen">
-          <img [src]="images[2]" style="margin-top: 30px;" class="image" alt="Slide Image 4" />
-          <div style="width: 80%; display: flex; flex-direction: column;">
+          <img [src]="images[2]" style="margin-top: 10px;" class="image" alt="Slide Image 4" />
+          <div id="div_text">
             <p id="pheading">Welcome</p>
             <p id="psmall"> Fast and Easy Application</p>
           </div>

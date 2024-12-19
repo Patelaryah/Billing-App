@@ -38,14 +38,14 @@
             <div style="display: flex; justify-content: space-between; margin: 0; padding: 0;">
               <p id="card-text">{{ item.name }}</p>
               <p 
-                id="card-header-text" 
+                id="card-header-text" style="font-size: 16px;"
                 [style.color]="item.payment === 'paid' ? '#69B677' : '#E8090CB0'">
                 {{ item.payment === 'paid' ? 'Paid' : 'Overdue' }}
               </p>
             </div>
             <div style="display: flex; justify-content: space-between;  margin: 0; padding: 0;">
               <p  id="card-text">{{ item.date }}</p>
-              <p id="card-header-text">₹<span style="padding: 0; margin: 0;">{{ item.money }}</span></p>
+              <p id="card-header-text" style="font-size: 16px;">₹<span style="padding: 0; margin: 0;">{{ item.money }}</span></p>
             </div>
           </ion-card-content>
         </ion-card>
@@ -60,9 +60,9 @@
     <ion-segment-content id="second">
 
       <div *ngIf="isnull2">
-        <ion-card *ngFor="let item of data1">
+        <ion-card *ngFor="let item of data1" (click)="oncardClick( ('00000' + item.invoice_no).slice(-5), item.name, item.payment, item.date, item.money)">
           <ion-card-header>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0 10px 0;">
+            <div style="display: flex; justify-content: space-between; padding: 5px 0 5px 0;">
               <p id="card-header-text">Invoice No</p>
               <p id="card-header-text">#<span>{{ ('00000' + item.invoice_no).slice(-5) }}</span></p>
             </div>
@@ -70,17 +70,17 @@
           </ion-card-header>
         
           <ion-card-content>
-            <div style="display: flex; justify-content: space-between;">
-              <p id="card-text">{{ item.name }}</p> 
+            <div style="display: flex; justify-content: space-between; margin: 0; padding: 0;">
+              <p id="card-text">{{ item.name }}</p>
               <p 
-                id="card-header-text" 
+                id="card-header-text" style="font-size: 16px;"
                 [style.color]="item.payment === 'paid' ? '#69B677' : '#E8090CB0'">
-                {{ item.payment === 'paid' ? 'Paid' : 'Overdue' }} 
+                {{ item.payment === 'paid' ? 'Paid' : 'Overdue' }}
               </p>
             </div>
-            <div style="display: flex; justify-content: space-between;">
-              <p id="card-text">{{ item.date }}</p> 
-              <p id="card-header-text">₹<span>{{ item.money }}</span></p>
+            <div style="display: flex; justify-content: space-between;  margin: 0; padding: 0;">
+              <p  id="card-text">{{ item.date }}</p>
+              <p id="card-header-text" style="font-size: 16px;">₹<span style="padding: 0; margin: 0;">{{ item.money }}</span></p>
             </div>
           </ion-card-content>
         </ion-card>
@@ -95,9 +95,9 @@
     <ion-segment-content id="third">
 
       <div *ngIf="isnull3">
-        <ion-card *ngFor="let item of data">
+        <ion-card *ngFor="let item of data" (click)="oncardClick( ('00000' + item.invoice_no).slice(-5), item.name, item.payment, item.date, item.money)">
           <ion-card-header>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0 10px 0;">
+            <div style="display: flex; justify-content: space-between; padding: 5px 0 5px 0;">
               <p id="card-header-text">Invoice No</p>
               <p id="card-header-text">#<span>{{ ('00000' + item.invoice_no).slice(-5) }}</span></p>
             </div>
@@ -105,17 +105,17 @@
           </ion-card-header>
         
           <ion-card-content>
-            <div style="display: flex; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; margin: 0; padding: 0;">
               <p id="card-text">{{ item.name }}</p>
               <p 
-                id="card-header-text" 
+                id="card-header-text" style="font-size: 16px;"
                 [style.color]="item.payment === 'paid' ? '#69B677' : '#E8090CB0'">
                 {{ item.payment === 'paid' ? 'Paid' : 'Overdue' }}
               </p>
             </div>
-            <div style="display: flex; justify-content: space-between;">
-              <p id="card-text">{{ item.date }}</p>
-              <p id="card-header-text">₹<span>{{ item.money }}</span></p>
+            <div style="display: flex; justify-content: space-between;  margin: 0; padding: 0;">
+              <p  id="card-text">{{ item.date }}</p>
+              <p id="card-header-text" style="font-size: 16px;">₹<span style="padding: 0; margin: 0;">{{ item.money }}</span></p>
             </div>
           </ion-card-content>
         </ion-card>

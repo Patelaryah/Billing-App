@@ -12,7 +12,7 @@
 <div class="ion-page" id="main-content">
   <!-- header -->
    
-  <ion-header style=" box-shadow: none !important;">
+  <ion-header *ngIf="fixbtn" style=" box-shadow: none !important;">
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
@@ -27,10 +27,10 @@
     </ion-toolbar>
   </ion-header> 
   
-                              <!-- content -->.
+                              <!-- content -->
 
 <!-- fix + button -->
-  <ion-fab id="ion-fab" horizontal="end">
+  <ion-fab *ngIf="fixbtn" id="ion-fab" horizontal="end">
     <ion-fab-button>
       <ion-icon id="fab-icon" name="add"></ion-icon>
     </ion-fab-button>

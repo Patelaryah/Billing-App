@@ -18,22 +18,27 @@ import { NotificationPage } from "../notification/notification.page";
 })
 export class HomePagePage {
 
+
   constructor() {
     addIcons({notificationsOutline,add,clipboard,people,personCircleOutline});
   }
 
   // change heading name by changing tab
   heading = ''
+  fixbtn = true;
   logTabName(event: any) {
     const selectedTab = event.tab;
     if(selectedTab == 'invoice'){
       this.heading = 'Invoice'
+      this.fixbtn = true;
     }
     else if (selectedTab == 'parties'){
       this.heading = 'Parties'
+      this.fixbtn = true;
     }
     else if (selectedTab == 'profile'){
       this.heading = 'Profile'
+      this.fixbtn = false;
     }
     console.log('Selected Tab:', selectedTab);
   }

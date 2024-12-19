@@ -15,7 +15,7 @@ register();
   templateUrl: './start-page1.page.html',
   styleUrls: ['./start-page1.page.scss'],
   standalone: true,
-  imports: [IonCol, IonRow, IonGrid, IonLabel, IonIcon, IonButton, IonContent, CommonModule, FormsModule],
+  imports: [IonCol, IonRow, IonGrid, IonIcon, IonButton, IonContent, CommonModule, FormsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class StartPage1Page {
@@ -34,14 +34,7 @@ export class StartPage1Page {
 
   constructor(private router: Router, private appDataService: AppDataService) {
     addIcons({ chevronBack, chevronForward });
-    // let data: any
-    // (async () => {
-    //   data = await this.appDataService.get('startup');
-    //   console.log('str: ',data);
-    // })();
     
-    
-
   }
   // when user swipe then occure
   onSlideChange() {

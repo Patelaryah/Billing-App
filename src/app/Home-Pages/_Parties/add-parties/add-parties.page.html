@@ -4,19 +4,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content  style="display: flex; flex-direction: column; border: #5516D9 solid; justify-content: center;">
-  <div style="display: flex; padding: 0 5% 0 5%; border: #5516D9 solid; flex-direction: column;">
-    <p style="font-size: 18.3px; color: #5516D9;">Add New Party</p>
+<ion-content>
+  <!-- upper content -->
+  <div class="div_first">
+    <p id="text1">Add New Party</p>
     <ion-input label="Party Name*" label-placement="floating" fill="outline" placeholder="e.g. Aman malik"></ion-input>
-    <p style="font-size: 14px; color: #5516D9; margin-top: 4px;">Add party through contacts</p>
+    <p id="text2">Add party through contacts</p>
   </div>
-  <div style=" display: flex; padding: 0 5% 0 5%; border: #5516D9 solid; flex-direction: column;">
+
+  <!-- stace between 2 div -->
+  <div style="height: 54%;"></div>
+  
+  <!-- lower content -->
+  <div class="div_second">
     <div style="display: flex;">
-      <ion-button style="width: 100%;" fill="outline">Outline</ion-button>
+      <ion-button id="btn1" fill="outline">Outline</ion-button>
       <ion-button style="width: 100%; --background: #D6C6F5;">Outline</ion-button>
     </div>
-    <div style="font-size: 13px; margin-top: 10px; display: flex; justify-content: center;">
-      Parties are people you do business with. Use them for invoices and to keep of your receivables &payables
+    <div id="inner_div_2">
+      <p id="text1">Parties are people you do business with. Use them for invoices and to keep of your receivables & payables</p>
     </div>
       
   </div>

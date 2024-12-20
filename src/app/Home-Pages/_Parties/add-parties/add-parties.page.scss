@@ -5,3 +5,44 @@ ion-content, ion-toolbar {
 ion-header, ion-toolbar, ion-title, ion-content {
     --color: black !important;
 }
+
+.div_first {
+    display: flex; 
+    padding: 0 5% 0 5%; 
+    flex-direction: column;
+
+    #text1 {
+        font-size: 18.3px; 
+        color: #5516D9;
+    }
+    
+    #text2 {
+        font-size: 14px; 
+        color: #5516D9; 
+        margin-top: 4px;
+    }
+}
+
+.div_second {
+    display: flex; 
+    padding: 0 5% 0 5%; 
+    flex-direction: column;
+
+    #btn1 {
+        width: 100%;
+        
+    }
+
+    #inner_div_2 {
+        margin-top: 10px; 
+        display: flex; 
+        justify-content: center;
+
+        #text1 {
+            font-size: 13px; 
+            padding: 0; 
+            align-items: center; 
+            margin: 0; color: #00000085;
+        }
+    }
+}
